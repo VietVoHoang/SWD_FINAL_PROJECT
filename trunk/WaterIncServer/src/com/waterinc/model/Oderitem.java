@@ -3,7 +3,7 @@ package com.waterinc.model;
 import javax.persistence.*;
 
 /**
- * Created by Asus on 6/28/2017.
+ * Created by Asus on 6/29/2017.
  */
 @Entity
 public class Oderitem {

@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by Asus on 6/28/2017.
+ * Created by Asus on 6/29/2017.
  */
 @Entity
 public class Order {

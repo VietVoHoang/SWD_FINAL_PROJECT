@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Asus on 6/28/2017.
+ * Created by Asus on 6/29/2017.
  */
 @Entity
 public class Agency {
@@ -15,6 +15,7 @@ public class Agency {
     @JsonView({View.AgencyView.class})
     private String agencyName;
     private String agencyAddress;
+    private Integer status;
     private Collection<Employee> employeesByAgencyId;
 
     @Id
@@ -47,6 +48,16 @@ public class Agency {
         this.agencyAddress = agencyAddress;
     }
 
+    @Basic
+    @Column(name = "status", nullable = false)
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,6 +69,7 @@ public class Agency {
         if (agencyName != null ? !agencyName.equals(agency.agencyName) : agency.agencyName != null) return false;
         if (agencyAddress != null ? !agencyAddress.equals(agency.agencyAddress) : agency.agencyAddress != null)
             return false;
+        if (status != null ? !status.equals(agency.status) : agency.status != null) return false;
 
         return true;
     }
@@ -67,6 +79,7 @@ public class Agency {
         int result = agencyId != null ? agencyId.hashCode() : 0;
         result = 31 * result + (agencyName != null ? agencyName.hashCode() : 0);
         result = 31 * result + (agencyAddress != null ? agencyAddress.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
 

@@ -13,6 +13,7 @@
 </head>
 <body>
 <div id="result">dasdas</div>
+<div id="result2">dasdas</div>
 
 <script>
 
@@ -33,6 +34,23 @@
     };
 
     getAll();
+
+    var test = function () {
+        $.ajax({
+            url: '/findAllProduct',
+            method: 'GET',
+            success: function (data) {
+                console.log(data);
+                $('#result2').empty();
+                for (var i = 0; i < data.length; i++) {
+                    var div = $('<div/>');
+                    div.append('<span>' + data[i].productName + '</span>');
+                    $('#result2').append(div);
+                }
+            }
+        })
+    };
+    test();
 </script>
 </body>
 

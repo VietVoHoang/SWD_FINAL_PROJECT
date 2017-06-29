@@ -1,17 +1,22 @@
 package com.waterinc.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.view.View;
+
 import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Asus on 6/28/2017.
+ * Created by Asus on 6/29/2017.
  */
 @Entity
 public class Product {
     private Integer productId;
+    @JsonView({View.ProductView.class})
     private String productName;
     private Integer productQuantity;
     private Double productPrice;
+    private Integer status;
     private Collection<Oderitem> oderitemsByProductId;
 
     @Id
@@ -54,6 +59,16 @@ public class Product {
         this.productPrice = productPrice;
     }
 
+    @Basic
+    @Column(name = "status", nullable = false)
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,6 +82,7 @@ public class Product {
             return false;
         if (productPrice != null ? !productPrice.equals(product.productPrice) : product.productPrice != null)
             return false;
+        if (status != null ? !status.equals(product.status) : product.status != null) return false;
 
         return true;
     }
@@ -77,6 +93,7 @@ public class Product {
         result = 31 * result + (productName != null ? productName.hashCode() : 0);
         result = 31 * result + (productQuantity != null ? productQuantity.hashCode() : 0);
         result = 31 * result + (productPrice != null ? productPrice.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
 
