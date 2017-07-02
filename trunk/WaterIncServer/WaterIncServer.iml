@@ -50,5 +50,6 @@
     <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="slf4j-api-1.7.25" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.41-bin" level="project" />
+    <orderEntry type="library" name="Spring Security-3.2.5" level="project" />
   </component>
 </module>

@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Asus on 6/29/2017.
+ * Created by Asus on 7/2/2017.
  */
 @Entity
 public class Agency {
@@ -49,7 +49,7 @@ public class Agency {
     }
 
     @Basic
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", nullable = true)
     public Integer getStatus() {
         return status;
     }

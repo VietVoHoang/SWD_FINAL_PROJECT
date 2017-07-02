@@ -4,18 +4,17 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Asus on 6/29/2017.
+ * Created by Asus on 7/2/2017.
  */
 @Entity
 public class Employee {
     private Integer employeeId;
     private String employeeName;
     private Integer agencyAgencyId;
-    private String employeeUsername;
-    private String employeePassword;
     private Integer status;
     private Agency agencyByAgencyAgencyId;
     private Collection<Order> ordersByEmployeeId;
+    private Collection<User> usersByEmployeeId;
 
     @Id
     @Column(name = "employeeId", nullable = false)
@@ -48,27 +47,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "employeeUsername", nullable = true, length = 45)
-    public String getEmployeeUsername() {
-        return employeeUsername;
-    }
-
-    public void setEmployeeUsername(String employeeUsername) {
-        this.employeeUsername = employeeUsername;
-    }
-
-    @Basic
-    @Column(name = "employeePassword", nullable = true, length = 45)
-    public String getEmployeePassword() {
-        return employeePassword;
-    }
-
-    public void setEmployeePassword(String employeePassword) {
-        this.employeePassword = employeePassword;
-    }
-
-    @Basic
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", nullable = true)
     public Integer getStatus() {
         return status;
     }
@@ -89,10 +68,6 @@ public class Employee {
             return false;
         if (agencyAgencyId != null ? !agencyAgencyId.equals(employee.agencyAgencyId) : employee.agencyAgencyId != null)
             return false;
-        if (employeeUsername != null ? !employeeUsername.equals(employee.employeeUsername) : employee.employeeUsername != null)
-            return false;
-        if (employeePassword != null ? !employeePassword.equals(employee.employeePassword) : employee.employeePassword != null)
-            return false;
         if (status != null ? !status.equals(employee.status) : employee.status != null) return false;
 
         return true;
@@ -103,8 +78,6 @@ public class Employee {
         int result = employeeId != null ? employeeId.hashCode() : 0;
         result = 31 * result + (employeeName != null ? employeeName.hashCode() : 0);
         result = 31 * result + (agencyAgencyId != null ? agencyAgencyId.hashCode() : 0);
-        result = 31 * result + (employeeUsername != null ? employeeUsername.hashCode() : 0);
-        result = 31 * result + (employeePassword != null ? employeePassword.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
@@ -126,5 +99,14 @@ public class Employee {
 
     public void setOrdersByEmployeeId(Collection<Order> ordersByEmployeeId) {
         this.ordersByEmployeeId = ordersByEmployeeId;
+    }
+
+    @OneToMany(mappedBy = "employeeByEmployeeEmployeeId")
+    public Collection<User> getUsersByEmployeeId() {
+        return usersByEmployeeId;
+    }
+
+    public void setUsersByEmployeeId(Collection<User> usersByEmployeeId) {
+        this.usersByEmployeeId = usersByEmployeeId;
     }
 }

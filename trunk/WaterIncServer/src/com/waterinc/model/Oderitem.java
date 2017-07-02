@@ -3,16 +3,26 @@ package com.waterinc.model;
 import javax.persistence.*;
 
 /**
- * Created by Asus on 6/29/2017.
+ * Created by Asus on 7/2/2017.
  */
 @Entity
 public class Oderitem {
+    private Integer itemId;
     private Integer itemQuantity;
     private Integer productProductId;
     private Integer orderOrderId;
-    private Integer itemId;
     private Product productByProductProductId;
     private Order orderByOrderOrderId;
+
+    @Id
+    @Column(name = "itemId", nullable = false)
+    public Integer getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Integer itemId) {
+        this.itemId = itemId;
+    }
 
     @Basic
     @Column(name = "itemQuantity", nullable = false)
@@ -44,16 +54,6 @@ public class Oderitem {
         this.orderOrderId = orderOrderId;
     }
 
-    @Id
-    @Column(name = "itemId", nullable = false)
-    public Integer getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,23 +61,23 @@ public class Oderitem {
 
         Oderitem oderitem = (Oderitem) o;
 
+        if (itemId != null ? !itemId.equals(oderitem.itemId) : oderitem.itemId != null) return false;
         if (itemQuantity != null ? !itemQuantity.equals(oderitem.itemQuantity) : oderitem.itemQuantity != null)
             return false;
         if (productProductId != null ? !productProductId.equals(oderitem.productProductId) : oderitem.productProductId != null)
             return false;
         if (orderOrderId != null ? !orderOrderId.equals(oderitem.orderOrderId) : oderitem.orderOrderId != null)
             return false;
-        if (itemId != null ? !itemId.equals(oderitem.itemId) : oderitem.itemId != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = itemQuantity != null ? itemQuantity.hashCode() : 0;
+        int result = itemId != null ? itemId.hashCode() : 0;
+        result = 31 * result + (itemQuantity != null ? itemQuantity.hashCode() : 0);
         result = 31 * result + (productProductId != null ? productProductId.hashCode() : 0);
         result = 31 * result + (orderOrderId != null ? orderOrderId.hashCode() : 0);
-        result = 31 * result + (itemId != null ? itemId.hashCode() : 0);
         return result;
     }
 
