@@ -17,34 +17,51 @@
 
 <script>
 
-    var getAll = function () {
-        $.ajax({
-            url: '/findAll',
-            method: 'GET',
-            success: function (data) {
-                console.log(data);
-                $('#result').empty();
-                for (var i = 0; i < data.length; i++) {
-                    var div = $('<div/>');
-                    div.append('<span>' + data[i].agencyName + '</span>');
-                    $('#result').append(div);
-                }
-            }
-        })
-    };
-
-    getAll();
+//    var getAll = function () {
+//        $.ajax({
+//            url: '/findAll',
+//            method: 'GET',
+//            success: function (data) {
+//                console.log(data);
+//                $('#result').empty();
+//                for (var i = 0; i < data.length; i++) {
+//                    var div = $('<div/>');
+//                    div.append('<span>' + data[i].agencyName + '</span>');
+//                    $('#result').append(div);
+//                }
+//            }
+//        })
+//    };
+//
+//    getAll();
+//
+//    var test = function () {
+//        $.ajax({
+//            url: '/findAllProduct',
+//            method: 'GET',
+//            success: function (data) {
+//                console.log(data);
+//                $('#result2').empty();
+//                for (var i = 0; i < data.length; i++) {
+//                    var div = $('<div/>');
+//                    div.append('<span>' + data[i].productName + '</span>');
+//                    $('#result2').append(div);
+//                }
+//            }
+//        })
+//    };
+//    test();
 
     var test = function () {
         $.ajax({
-            url: '/findAllProduct',
+            url: '/findAllAgency',
             method: 'GET',
             success: function (data) {
                 console.log(data);
                 $('#result2').empty();
                 for (var i = 0; i < data.length; i++) {
                     var div = $('<div/>');
-                    div.append('<span>' + data[i].productName + '</span>');
+                    div.append('<span>' + data[i].agencyName + '</span>');
                     $('#result2').append(div);
                 }
             }

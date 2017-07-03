@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="hibernate" name="Hibernate">
+    <facet type="web" name="Web">
       <configuration>
-        <datasource-map />
-        <naming-strategy-map />
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/WaterIncServer_war_exploded/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/out/artifacts/WaterIncServer_war_exploded" relative="/" />
+        </webroots>
       </configuration>
     </facet>
-    <facet type="web" name="Web">
+    <facet type="web" name="Web2">
       <configuration>
         <descriptors>
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
@@ -17,18 +21,14 @@
         </webroots>
       </configuration>
     </facet>
-    <facet type="Spring" name="Spring">
-      <configuration />
-    </facet>
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="Hibernate" />
+        <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="NewPersistenceUnit" value="b72d06db-71e6-4b21-b597-cd0193ca7841" />
-          <factory-entry name="entityManagerFactory" value="b72d06db-71e6-4b21-b597-cd0193ca7841" />
+          <factory-entry name="NewPersistenceUnit" />
         </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/out/artifacts/WaterIncServer_war_exploded/WEB-INF/classes/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -39,17 +39,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Hibernate 5.2.10-5.2.10" level="project" />
-    <orderEntry type="library" name="Spring-4.3.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Spring MVC-4.3.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Spring Data JPA-1.0.0" level="project" />
-    <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="jackson-annotations-2.8.8" level="project" />
     <orderEntry type="library" name="jackson-core-2.8.8" level="project" />
     <orderEntry type="library" name="jackson-databind-2.8.8" level="project" />
-    <orderEntry type="library" name="servlet-api" level="project" />
-    <orderEntry type="library" name="slf4j-api-1.7.25" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.41-bin" level="project" />
-    <orderEntry type="library" name="Spring Security-3.2.5" level="project" />
+    <orderEntry type="library" name="slf4j-api-1.7.25" level="project" />
   </component>
 </module>
