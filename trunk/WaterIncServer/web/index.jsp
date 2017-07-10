@@ -54,14 +54,14 @@
 
     var test = function () {
         $.ajax({
-            url: '/findAllAgency',
+            url: '/findAllProduct',
             method: 'GET',
             success: function (data) {
                 console.log(data);
                 $('#result2').empty();
                 for (var i = 0; i < data.length; i++) {
                     var div = $('<div/>');
-                    div.append('<span>' + data[i].agencyName + '</span>');
+                    div.append('<span>' + data[i].productName + '</span>');
                     $('#result2').append(div);
                 }
             }
