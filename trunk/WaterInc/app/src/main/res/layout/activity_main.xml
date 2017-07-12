@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtName"
+        android:layout_alignStart="@+id/edtAddress"
+        android:layout_marginLeft="5dp"
+        android:text="Name"
+        android:textAllCaps="true"
+        android:textSize="6pt" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/txtPhone"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="@color/colorBlue"
+        android:inputType="text"
+        android:lines="1"
+        android:nextFocusDown="@+id/edtPhone"
+        android:paddingBottom="10dp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtPhone"
+        android:layout_alignStart="@+id/edtAddress"
+        android:layout_marginLeft="5dp"
+        android:text="Phone"
+        android:textAllCaps="true"
+        android:textSize="6pt" />
+
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/txtAddress"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="@color/colorBlue"
+        android:inputType="text"
+        android:lines="1"
+        android:nextFocusDown="@+id/edtPassword"
+        android:paddingBottom="10dp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtAddress"
+        android:layout_alignStart="@+id/edtAddress"
+        android:layout_marginLeft="5dp"
+        android:text="Address"
+        android:textAllCaps="true"
+        android:textSize="6pt" />
+
+    <EditText
+        android:id="@+id/edtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/btnOrder"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="@color/colorBlue"
+        android:inputType="text"
+        android:lines="1"
+        android:nextFocusDown="@+id/btnLogin"
+        android:paddingBottom="10dp"
+        android:textColor="@android:color/background_dark" />
+
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1.0"
+        android:background="@drawable/rounded_rectangle"
+        android:backgroundTint="@color/colorBlue"
+        android:text="ĐẶT HÀNG"
+        android:textColor="@android:color/background_light"
+        android:textSize="7pt" />
+
+</RelativeLayout>

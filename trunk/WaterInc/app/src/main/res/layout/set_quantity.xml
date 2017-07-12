@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Vui lòng nhập số lượng:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="10pt" />
+
+    <EditText
+        android:id="@+id/edtQuantity"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDescription"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@android:color/background_light"
+        android:text="1"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="10pt"
+        android:lines="1"
+        android:inputType="number"
+        android:maxLength="3"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDescription"
+        android:layout_toRightOf="@+id/edtQuantity"
+        android:background="@color/colorBlue"
+        android:text="+"
+        android:textSize="12pt"
+        android:textColor="@android:color/background_light"/>
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDescription"
+        android:layout_toLeftOf="@+id/edtQuantity"
+        android:background="@color/colorBlue"
+        android:text="-"
+        android:textSize="12pt"
+        android:textColor="@android:color/background_light"/>
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAdd"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="Thành tiền: "
+        android:textColor="@color/colorRed"
+        android:textAlignment="center"
+        android:textSize="11pt"/>
+
+</RelativeLayout>

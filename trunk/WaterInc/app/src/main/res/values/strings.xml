@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NAOMI</string>
+    <string name="PASSWORD">Mật Khẩu</string>
+    <string name="USERNAME">Tên đăng nhập</string>
+    <string name="LOGIN">ĐĂNG NHẬP</string>
+    <string name="SIGNUP">ĐĂNG KÍ</string>
+    <string name="QUICK_ORDER">Nhấn vào đây để đặt hàng nhanh</string>
+    <string name="SIGNUP_LOWERCASE">Đăng Kí</string>
+    <string name="CONFIRM_PASSWORD">Xác Nhận Mật Khẩu</string>
+</resources>
