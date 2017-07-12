@@ -1,8 +1,8 @@
 package com.waterinc.config;
 
+import com.waterinc.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.waterinc.model.User;
 
 import java.util.Collection;
 

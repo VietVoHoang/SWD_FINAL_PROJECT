@@ -9,6 +9,9 @@
         <class>com.waterinc.model.Oderitem</class>
         <class>com.waterinc.model.Order</class>
         <class>com.waterinc.model.Product</class>
+        <class>com.waterinc.model.Bonuscoefficient</class>
+        <class>com.waterinc.model.Orderitem</class>
+        <class>com.waterinc.model.Salary</class>
         <class>com.waterinc.model.User</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/waterincdb"/>

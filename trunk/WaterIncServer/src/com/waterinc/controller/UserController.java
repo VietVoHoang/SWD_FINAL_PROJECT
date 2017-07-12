@@ -17,7 +17,6 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @JsonView(View.AgencyView.class)
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
     public List<User> getAllUser() {
         List<User> result = userRepository.findAll();

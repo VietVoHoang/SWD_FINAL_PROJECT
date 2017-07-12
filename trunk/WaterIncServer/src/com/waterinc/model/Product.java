@@ -7,26 +7,26 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Asus on 7/2/2017.
+ * Created by Asus on 7/12/2017.
  */
 @Entity
 public class Product {
-    private Integer productId;
+    private Integer id;
     @JsonView({View.ProductView.class})
     private String productName;
     private Integer productQuantity;
     private Double productPrice;
     private Integer status;
-    private Collection<Oderitem> oderitemsByProductId;
+    private Collection<Orderitem> orderitemsById;
 
     @Id
-    @Column(name = "productId", nullable = false)
-    public Integer getProductId() {
-        return productId;
+    @Column(name = "id", nullable = false)
+    public Integer getId() {
+        return id;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Basic
@@ -76,7 +76,7 @@ public class Product {
 
         Product product = (Product) o;
 
-        if (productId != null ? !productId.equals(product.productId) : product.productId != null) return false;
+        if (id != null ? !id.equals(product.id) : product.id != null) return false;
         if (productName != null ? !productName.equals(product.productName) : product.productName != null) return false;
         if (productQuantity != null ? !productQuantity.equals(product.productQuantity) : product.productQuantity != null)
             return false;
@@ -89,7 +89,7 @@ public class Product {
 
     @Override
     public int hashCode() {
-        int result = productId != null ? productId.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (productName != null ? productName.hashCode() : 0);
         result = 31 * result + (productQuantity != null ? productQuantity.hashCode() : 0);
         result = 31 * result + (productPrice != null ? productPrice.hashCode() : 0);
@@ -97,12 +97,12 @@ public class Product {
         return result;
     }
 
-    @OneToMany(mappedBy = "productByProductProductId")
-    public Collection<Oderitem> getOderitemsByProductId() {
-        return oderitemsByProductId;
+    @OneToMany(mappedBy = "productByProductId")
+    public Collection<Orderitem> getOrderitemsById() {
+        return orderitemsById;
     }
 
-    public void setOderitemsByProductId(Collection<Oderitem> oderitemsByProductId) {
-        this.oderitemsByProductId = oderitemsByProductId;
+    public void setOrderitemsById(Collection<Orderitem> orderitemsById) {
+        this.orderitemsById = orderitemsById;
     }
 }

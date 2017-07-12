@@ -5,26 +5,29 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by Asus on 7/2/2017.
+ * Created by Asus on 7/12/2017.
  */
 @Entity
 public class Order {
-    private Integer orderId;
+    private Integer id;
     private Timestamp orderCreateDate;
     private Double orderTotal;
     private Integer orderStatus;
-    private Integer employeeEmployeeId;
-    private Collection<Oderitem> oderitemsByOrderId;
-    private Employee employeeByEmployeeEmployeeId;
+    private String customerName;
+    private String customerPhone;
+    private String customerAddress;
+    private Integer employeeId;
+    private Employee employeeByEmployeeId;
+    private Collection<Orderitem> orderitemsById;
 
     @Id
-    @Column(name = "orderId", nullable = false)
-    public Integer getOrderId() {
-        return orderId;
+    @Column(name = "id", nullable = false)
+    public Integer getId() {
+        return id;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Basic
@@ -58,13 +61,43 @@ public class Order {
     }
 
     @Basic
-    @Column(name = "Employee_employeeId", nullable = false)
-    public Integer getEmployeeEmployeeId() {
-        return employeeEmployeeId;
+    @Column(name = "customerName", nullable = false, length = 45)
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setEmployeeEmployeeId(Integer employeeEmployeeId) {
-        this.employeeEmployeeId = employeeEmployeeId;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    @Basic
+    @Column(name = "customerPhone", nullable = false, length = 11)
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
+
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+    }
+
+    @Basic
+    @Column(name = "customerAddress", nullable = false, length = 100)
+    public String getCustomerAddress() {
+        return customerAddress;
+    }
+
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
+    }
+
+    @Basic
+    @Column(name = "Employee_id", nullable = false)
+    public Integer getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
     }
 
     @Override
@@ -74,43 +107,50 @@ public class Order {
 
         Order order = (Order) o;
 
-        if (orderId != null ? !orderId.equals(order.orderId) : order.orderId != null) return false;
+        if (id != null ? !id.equals(order.id) : order.id != null) return false;
         if (orderCreateDate != null ? !orderCreateDate.equals(order.orderCreateDate) : order.orderCreateDate != null)
             return false;
         if (orderTotal != null ? !orderTotal.equals(order.orderTotal) : order.orderTotal != null) return false;
         if (orderStatus != null ? !orderStatus.equals(order.orderStatus) : order.orderStatus != null) return false;
-        if (employeeEmployeeId != null ? !employeeEmployeeId.equals(order.employeeEmployeeId) : order.employeeEmployeeId != null)
+        if (customerName != null ? !customerName.equals(order.customerName) : order.customerName != null) return false;
+        if (customerPhone != null ? !customerPhone.equals(order.customerPhone) : order.customerPhone != null)
             return false;
+        if (customerAddress != null ? !customerAddress.equals(order.customerAddress) : order.customerAddress != null)
+            return false;
+        if (employeeId != null ? !employeeId.equals(order.employeeId) : order.employeeId != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = orderId != null ? orderId.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (orderCreateDate != null ? orderCreateDate.hashCode() : 0);
         result = 31 * result + (orderTotal != null ? orderTotal.hashCode() : 0);
         result = 31 * result + (orderStatus != null ? orderStatus.hashCode() : 0);
-        result = 31 * result + (employeeEmployeeId != null ? employeeEmployeeId.hashCode() : 0);
+        result = 31 * result + (customerName != null ? customerName.hashCode() : 0);
+        result = 31 * result + (customerPhone != null ? customerPhone.hashCode() : 0);
+        result = 31 * result + (customerAddress != null ? customerAddress.hashCode() : 0);
+        result = 31 * result + (employeeId != null ? employeeId.hashCode() : 0);
         return result;
     }
 
-    @OneToMany(mappedBy = "orderByOrderOrderId")
-    public Collection<Oderitem> getOderitemsByOrderId() {
-        return oderitemsByOrderId;
-    }
-
-    public void setOderitemsByOrderId(Collection<Oderitem> oderitemsByOrderId) {
-        this.oderitemsByOrderId = oderitemsByOrderId;
-    }
-
     @ManyToOne
-    @JoinColumn(name = "Employee_employeeId", referencedColumnName = "employeeId", nullable = false, insertable = false, updatable = false)
-    public Employee getEmployeeByEmployeeEmployeeId() {
-        return employeeByEmployeeEmployeeId;
+    @JoinColumn(name = "Employee_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public Employee getEmployeeByEmployeeId() {
+        return employeeByEmployeeId;
     }
 
-    public void setEmployeeByEmployeeEmployeeId(Employee employeeByEmployeeEmployeeId) {
-        this.employeeByEmployeeEmployeeId = employeeByEmployeeEmployeeId;
+    public void setEmployeeByEmployeeId(Employee employeeByEmployeeId) {
+        this.employeeByEmployeeId = employeeByEmployeeId;
+    }
+
+    @OneToMany(mappedBy = "orderByOrderId")
+    public Collection<Orderitem> getOrderitemsById() {
+        return orderitemsById;
+    }
+
+    public void setOrderitemsById(Collection<Orderitem> orderitemsById) {
+        this.orderitemsById = orderitemsById;
     }
 }

@@ -18,7 +18,6 @@ public class EmployeeController {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @JsonView(View.AgencyView.class)
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
     public List<Employee> getAllEmployee() {
         List<Employee> result = employeeRepository.findAll();
@@ -29,8 +28,7 @@ public class EmployeeController {
     @RequestMapping(value = "addEmployee", method = RequestMethod.POST)
     public Employee addNewEmployee(String name, int agencyId, int status) {
         Employee employee = new Employee();
-        employee.setEmployeeName(name);
-        employee.setAgencyAgencyId(agencyId);
+
         employee.setStatus(status);
         return employeeRepository.save(employee);
     }
@@ -38,8 +36,7 @@ public class EmployeeController {
     @RequestMapping(value = "updateEmployee", method = RequestMethod.POST)
     public Employee updateEmployee(int id, String name, int agencyId, int status) {
         Employee employee = employeeRepository.findOne(id);
-        employee.setEmployeeName(name);
-        employee.setAgencyAgencyId(agencyId);
+
         employee.setStatus(status);
         return employeeRepository.save(employee);
     }

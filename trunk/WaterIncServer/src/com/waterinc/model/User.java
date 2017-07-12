@@ -3,7 +3,7 @@ package com.waterinc.model;
 import javax.persistence.*;
 
 /**
- * Created by Asus on 7/2/2017.
+ * Created by Asus on 7/12/2017.
  */
 @Entity
 public class User {
@@ -12,8 +12,8 @@ public class User {
     private String password;
     private Integer enable;
     private String role;
-    private Integer employeeEmployeeId;
-    private Employee employeeByEmployeeEmployeeId;
+    private Integer employeeId;
+    private Employee employeeByEmployeeId;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -66,13 +66,13 @@ public class User {
     }
 
     @Basic
-    @Column(name = "employee_employeeId", nullable = false)
-    public Integer getEmployeeEmployeeId() {
-        return employeeEmployeeId;
+    @Column(name = "Employee_id", nullable = false)
+    public Integer getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployeeEmployeeId(Integer employeeEmployeeId) {
-        this.employeeEmployeeId = employeeEmployeeId;
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
     }
 
     @Override
@@ -87,8 +87,7 @@ public class User {
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
         if (enable != null ? !enable.equals(user.enable) : user.enable != null) return false;
         if (role != null ? !role.equals(user.role) : user.role != null) return false;
-        if (employeeEmployeeId != null ? !employeeEmployeeId.equals(user.employeeEmployeeId) : user.employeeEmployeeId != null)
-            return false;
+        if (employeeId != null ? !employeeId.equals(user.employeeId) : user.employeeId != null) return false;
 
         return true;
     }
@@ -100,17 +99,17 @@ public class User {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (enable != null ? enable.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);
-        result = 31 * result + (employeeEmployeeId != null ? employeeEmployeeId.hashCode() : 0);
+        result = 31 * result + (employeeId != null ? employeeId.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "employee_employeeId", referencedColumnName = "employeeId", nullable = false, insertable = false, updatable = false)
-    public Employee getEmployeeByEmployeeEmployeeId() {
-        return employeeByEmployeeEmployeeId;
+    @JoinColumn(name = "Employee_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public Employee getEmployeeByEmployeeId() {
+        return employeeByEmployeeId;
     }
 
-    public void setEmployeeByEmployeeEmployeeId(Employee employeeByEmployeeEmployeeId) {
-        this.employeeByEmployeeEmployeeId = employeeByEmployeeEmployeeId;
+    public void setEmployeeByEmployeeId(Employee employeeByEmployeeId) {
+        this.employeeByEmployeeId = employeeByEmployeeId;
     }
 }
