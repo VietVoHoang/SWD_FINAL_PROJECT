@@ -11,6 +11,7 @@ import java.util.Collection;
  */
 @Entity
 public class Product {
+    @JsonView({View.ProductView.class})
     private Integer id;
     @JsonView({View.ProductView.class})
     private String productName;
