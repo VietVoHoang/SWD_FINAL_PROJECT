@@ -26,7 +26,7 @@ public class ProductController {
     @RequestMapping(value = "findAllProduct", method = RequestMethod.GET)
     public List<Product> findAllProduct() {
         List<Product> result = productRepository.findAll();
-        System.out.println(result.size());
+//        System.out.println(result.size());
         return result;
     }
 
