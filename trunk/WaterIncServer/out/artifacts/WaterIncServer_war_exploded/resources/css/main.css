@@ -702,6 +702,7 @@ color: #FFFFFF;
 }
 .sidebar-menu li > a {
     position: relative;
+    color: #FFF;
 }
 .sidebar-menu li > a > .pull-right-container {
     position: absolute;

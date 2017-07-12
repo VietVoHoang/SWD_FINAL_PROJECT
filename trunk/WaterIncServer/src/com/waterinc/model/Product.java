@@ -14,9 +14,16 @@ public class Product {
     private Integer id;
     @JsonView({View.ProductView.class})
     private String productName;
+
+    @JsonView({View.ProductView.class})
     private Integer productQuantity;
+
+    @JsonView({View.ProductView.class})
     private Double productPrice;
+
+    @JsonView({View.ProductView.class})
     private Integer status;
+
     private Collection<Orderitem> orderitemsById;
 
     @Id

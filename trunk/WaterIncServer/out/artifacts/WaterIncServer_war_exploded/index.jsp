@@ -5,7 +5,10 @@
   Time: 11:16 AM
   To change this template use File | Settings | File Templates.
 --%>
+<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+
 <head>
     <title>NAOMI</title>
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
@@ -26,6 +29,9 @@
     <link rel="stylesheet" href="resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/mycss.css">
+    <link rel="shortcut icon" href="/resources/img/logo.png">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -95,7 +101,6 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
-                <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview active">
                     <a href="#">
                         <i class="fa fa-newspaper-o"></i>
@@ -180,45 +185,19 @@
                         <!-- table -->
                         <table class="w3-table-all w3-hoverable">
                             <tr style="background-color: #00a65a; color: #FFF">
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Points</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
                                 <th></th>
                                 <th></th>
                             </tr>
-                            <tr>
-                                <td>Jill</td>
-                                <td>Smith</td>
-                                <td>50</td>
-                                <td>
-                                    <button class="btn btn-default"><i class="fa fa-pencil"></i></button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-default"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Eve</td>
-                                <td>Jackson</td>
-                                <td>94</td>
-                                <td>
-                                    <button class="btn btn-default"><i class="fa fa-pencil"></i></button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-default"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Adam</td>
-                                <td>Johnson</td>
-                                <td>67</td>
-                                <td>
-                                    <button class="btn btn-default"><i class="fa fa-pencil"></i></button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-default"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            <tbody id="data">
+                                <tr>
+                                    <td>Jill</td>
+                                    <td>Smith</td>
+                                    <td>50</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </section>
@@ -317,12 +296,11 @@
 <!-- FastClick -->
 <script src="resources/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<!--<script src="dist/js/app.min.js"></script>-->
+<script src="resources/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="resources/js/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="resources/js/demo.js"></script>
-
 
 <script>
     var test = function () {
@@ -331,17 +309,22 @@
             method: 'GET',
             success: function (data) {
                 console.log(data);
-                $('#result2').empty();
+                $('#data').empty();
                 for (var i = 0; i < data.length; i++) {
-                    var div = $('<div/>');
-                    div.append('<span>' + data[i].productName + '</span>');
-                    $('#result2').append(div);
+                    var row = $('<tr/>');
+                    row.append('<td>' + data[i].productName + '</td>'
+                                + '<td>' + data[i].productQuantity + '</td>'
+                                + '<td>' + data[i].productPrice + '</td>');
+                    row.append('<td><button class="btn btn-default"><i class="fa fa-pencil"></i></button></td>');
+                    row.append('<td><button class="btn btn-default"><i class="fa fa-trash"></i></button></td>');
+                    $('#data').append(row);
                 }
             }
         })
     };
     test();
 </script>
+
 </body>
 
 </html>
