@@ -434,8 +434,11 @@ color: #FFFFFF;
 }
 
 .main-sidebar {
-    background: #3BB8EC !important;
+    background-color: #3BB8EC !important;
     color: #FFFFFF !important;
+    background-image: url("/resources/img/background.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 @media (max-width: 767px) {
     .main-sidebar,
@@ -686,6 +689,7 @@ color: #FFFFFF;
         margin-left: 50px;
     }
 }
+
 .sidebar-menu,
 .main-sidebar .user-panel,
 .sidebar-menu > li.header {
