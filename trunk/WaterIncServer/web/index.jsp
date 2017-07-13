@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/mycss.css">
     <link rel="shortcut icon" href="/resources/img/logo.png">
@@ -303,6 +305,8 @@
 <script src="resources/js/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="resources/js/demo.js"></script>
+<!-- datatable -->
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
 <script src="resources/js/Product.js"></script>
 
