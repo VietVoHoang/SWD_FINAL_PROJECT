@@ -5,17 +5,21 @@ import com.waterinc.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
 
 /**
  * Created by hongducphan on 7/3/17.
  */
+@RestController
+@EnableWebMvc
 public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @RequestMapping(value = "findAll", method = RequestMethod.GET)
+    @RequestMapping(value = "findAllUser", method = RequestMethod.GET)
     public List<Users> getAllUser() {
         List<Users> result = userRepository.findAll();
         System.out.println(result.size());
