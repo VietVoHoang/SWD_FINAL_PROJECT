@@ -7,6 +7,8 @@ import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ import java.util.List;
 /**
  * Created by hongducphan on 7/3/17.
  */
+@RestController
+@EnableWebMvc
 public class OrderController {
     @Autowired
     OrderRepository orderRepository;
@@ -55,7 +59,7 @@ public class OrderController {
         return orderRepository.save(order);
     }
 
-    @RequestMapping(value = "removeProduct", method = RequestMethod.POST)
+    @RequestMapping(value = "removeOrder", method = RequestMethod.POST)
     public void removeOrder(int id) {
         Orders order = orderRepository.findOne(id);
         if (order != null) {
