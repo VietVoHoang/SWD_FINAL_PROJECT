@@ -1,6 +1,6 @@
 package com.waterinc.repositories;
 
-import com.waterinc.model.Order;
+import com.waterinc.model.Orders;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * Created by hongducphan on 7/3/17.
  */
-public interface OrderRepository extends CrudRepository<Order, Integer> {
-    List<Order> findAll();
+public interface OrderRepository extends CrudRepository<Orders, Integer> {
+    List<Orders> findAll();
 }

@@ -1,9 +1,7 @@
 package com.waterinc.controller;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import com.waterinc.model.User;
+import com.waterinc.model.Users;
 import com.waterinc.repositories.UserRepository;
-import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,15 +16,15 @@ public class UserController {
     UserRepository userRepository;
 
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
-    public List<User> getAllUser() {
-        List<User> result = userRepository.findAll();
+    public List<Users> getAllUser() {
+        List<Users> result = userRepository.findAll();
         System.out.println(result.size());
         return result;
     }
 
     @RequestMapping(value = "addUser", method = RequestMethod.POST)
-    public User addUser(String userName, String password, int enable, String role) {
-        User user = new User();
+    public Users addUser(String userName, String password, int enable, String role) {
+        Users user = new Users();
         user.setUsername(userName);
         user.setPassword(password);
         user.setEnable(enable);
@@ -35,8 +33,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "updateUser", method = RequestMethod.POST)
-    public User updateUser(int id, String userName, String password, int enable, String role) {
-        User user = userRepository.findOne(id);
+    public Users updateUser(int id, String userName, String password, int enable, String role) {
+        Users user = userRepository.findOne(id);
         user.setUsername(userName);
         user.setPassword(password);
         user.setEnable(enable);
@@ -46,7 +44,7 @@ public class UserController {
 
     @RequestMapping(value = "removeUser", method = RequestMethod.POST)
     public void removeUser(int id) {
-        User user = userRepository.findOne(id);
+        Users user = userRepository.findOne(id);
         if(user != null) {
             user.setEnable(0);
         }

@@ -25,31 +25,54 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3526">
-              <caret line="30" column="70" lean-forward="false" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+            <state relative-caret-position="276">
+              <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myjs.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/resources/js/myjs.js">
+      <file leaf-file-name="Product.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/resources/js/Product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            <state relative-caret-position="195">
+              <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Product.java">
+      <file leaf-file-name="Products.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Products.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding>
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#726#727#0" expanded="false" />
+                <element signature="e#751#752#0" expanded="false" />
+                <element signature="e#788#789#0" expanded="false" />
+                <element signature="e#816#817#0" expanded="false" />
+                <element signature="e#930#931#0" expanded="false" />
+                <element signature="e#964#965#0" expanded="false" />
+                <element signature="e#1018#1019#0" expanded="false" />
+                <element signature="e#1064#1065#0" expanded="false" />
+                <element signature="e#1174#1175#0" expanded="false" />
+                <element signature="e#1212#1213#0" expanded="false" />
+                <element signature="e#1275#1276#0" expanded="false" />
+                <element signature="e#1329#1330#0" expanded="false" />
+                <element signature="e#1447#1448#0" expanded="false" />
+                <element signature="e#1482#1483#0" expanded="false" />
+                <element signature="e#1538#1539#0" expanded="false" />
+                <element signature="e#1586#1587#0" expanded="false" />
+                <element signature="e#1677#1678#0" expanded="false" />
+                <element signature="e#1706#1707#0" expanded="false" />
+                <element signature="e#1751#1752#0" expanded="false" />
+                <element signature="e#1787#1788#0" expanded="false" />
+                <element signature="e#3188#3189#0" expanded="false" />
+                <element signature="e#3225#3226#0" expanded="false" />
+                <element signature="e#3301#3302#0" expanded="false" />
+                <element signature="e#3353#3354#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,9 +81,11 @@
       <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="583">
+              <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,8 +93,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/resources/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="411" column="27" lean-forward="true" selection-start-line="411" selection-start-column="27" selection-end-line="411" selection-end-column="27" />
+            <state relative-caret-position="6165">
+              <caret line="411" column="27" lean-forward="false" selection-start-line="411" selection-start-column="27" selection-end-line="411" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -92,9 +117,9 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,23 +150,38 @@
         <option value="$PROJECT_DIR$/src/com/waterinc/model/Employee.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/model/Oderitem.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/model/Agency.java" />
-        <option value="$PROJECT_DIR$/src/com/waterinc/repositories/ProductRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/waterinc/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/config/User.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/view/View.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/model/User.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/model/Orderitem.java" />
         <option value="$PROJECT_DIR$/src/com/waterinc/model/Order.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/com/waterinc/controller/EmployeeController.java" />
-        <option value="$PROJECT_DIR$/src/com/waterinc/controller/UserController.java" />
         <option value="$PROJECT_DIR$/web/resources/js/dashboard.js" />
         <option value="$PROJECT_DIR$/web/WEB-INF/aaa.jsp" />
         <option value="$PROJECT_DIR$/web/resources/css/mycss.css" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/resources/css/main.css" />
         <option value="$PROJECT_DIR$/src/com/waterinc/model/Product.java" />
         <option value="$PROJECT_DIR$/web/resources/js/myjs.js" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/ProductsEntity.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/repositories/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/repositories/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/repositories/OrderRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/repositories/EmployeeRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/controller/EmployeeController.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/Bonuscoefficient.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/Employees.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/config/SecurityUser.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/config/SecurityUserDetailService.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/Orderitems.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/Orders.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/Users.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/model/Products.java" />
+        <option value="$PROJECT_DIR$/web/resources/js/Product.js" />
+        <option value="$PROJECT_DIR$/src/com/waterinc/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
       </list>
     </option>
   </component>
@@ -159,7 +199,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="838" />
   </component>
@@ -178,9 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -431,6 +468,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -859,12 +899,53 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -1036,10 +1117,42 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
       <method />
     </configuration>
     <configuration default="false" name="WaterInc" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.11" ALTERNATIVE_JRE_ENABLED="false">
@@ -1144,14 +1257,18 @@
       <workItem from="1499851856889" duration="2168000" />
       <workItem from="1499854295581" duration="159000" />
       <workItem from="1499854303422" duration="2308000" />
+      <workItem from="1499877000717" duration="7090000" />
+      <workItem from="1499884742131" duration="3446000" />
+      <workItem from="1499935204521" duration="3403000" />
+      <workItem from="1499941499921" duration="97000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33326000" />
+    <option name="totallyTimeSpent" value="47362000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1440" height="838" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1168,17 +1285,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4746424" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44083226" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27638888" sideWeight="0.2379714" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27638888" sideWeight="0.76202863" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27222222" sideWeight="0.26976743" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27222222" sideWeight="0.73023254" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1197,7 +1314,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1205,44 +1324,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/DatabaseConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="40" column="75" lean-forward="false" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/AgencyRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/AgencyController.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Agency.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Employee.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Oderitem.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Order.java" />
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1287,51 +1368,11 @@
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/AgencyRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Oderitem.java" />
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Agency.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/ProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/AgencyController.java" />
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/User.java" />
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/User.java" />
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Orderitem.java" />
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Order.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/EmployeeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/SecurityUserDetailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/SecurityUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1511#1512#0" expanded="false" />
-            <element signature="e#1542#1543#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1345,30 +1386,6 @@
         <state relative-caret-position="240">
           <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1398,29 +1415,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Employee.java" />
     <entry file="file://$PROJECT_DIR$/web/resources/plugins/jBox/jBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/css/mycss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,53 +1434,203 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="411" column="27" lean-forward="true" selection-start-line="411" selection-start-column="27" selection-end-line="411" selection-end-column="27" />
+        <state relative-caret-position="6165">
+          <caret line="411" column="27" lean-forward="false" selection-start-line="411" selection-start-column="27" selection-end-line="411" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/ProductsEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/ProductRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3526">
-          <caret line="30" column="70" lean-forward="false" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+        <state relative-caret-position="105">
+          <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/repositories/EmployeeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/EmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/SecurityUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/SecurityUserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Bonuscoefficient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Employees.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-894">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Orderitems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="91" column="119" lean-forward="false" selection-start-line="91" selection-start-column="119" selection-end-line="91" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Orders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="148" column="122" lean-forward="false" selection-start-line="148" selection-start-column="122" selection-end-line="148" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Salary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="106" column="123" lean-forward="true" selection-start-line="106" selection-start-column="123" selection-end-line="106" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/css/mycss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="38" column="81" lean-forward="false" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Products.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#726#727#0" expanded="false" />
+            <element signature="e#751#752#0" expanded="false" />
+            <element signature="e#788#789#0" expanded="false" />
+            <element signature="e#816#817#0" expanded="false" />
+            <element signature="e#930#931#0" expanded="false" />
+            <element signature="e#964#965#0" expanded="false" />
+            <element signature="e#1018#1019#0" expanded="false" />
+            <element signature="e#1064#1065#0" expanded="false" />
+            <element signature="e#1174#1175#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="false" />
+            <element signature="e#1275#1276#0" expanded="false" />
+            <element signature="e#1329#1330#0" expanded="false" />
+            <element signature="e#1447#1448#0" expanded="false" />
+            <element signature="e#1482#1483#0" expanded="false" />
+            <element signature="e#1538#1539#0" expanded="false" />
+            <element signature="e#1586#1587#0" expanded="false" />
+            <element signature="e#1677#1678#0" expanded="false" />
+            <element signature="e#1706#1707#0" expanded="false" />
+            <element signature="e#1751#1752#0" expanded="false" />
+            <element signature="e#1787#1788#0" expanded="false" />
+            <element signature="e#3188#3189#0" expanded="false" />
+            <element signature="e#3225#3226#0" expanded="false" />
+            <element signature="e#3301#3302#0" expanded="false" />
+            <element signature="e#3353#3354#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/waterinc/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/waterinc/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        <state relative-caret-position="583">
+          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
           <folding>
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/js/myjs.js">
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+        <state relative-caret-position="276">
+          <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/js/Product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
           <folding />
         </state>
       </provider>

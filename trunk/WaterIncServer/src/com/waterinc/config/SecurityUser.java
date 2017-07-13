@@ -1,6 +1,6 @@
 package com.waterinc.config;
 
-import com.waterinc.model.User;
+import com.waterinc.model.Users;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -15,12 +15,12 @@ public class SecurityUser implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
     private boolean enabled;
 
-    private User userInfo;
+    private Users userInfo;
 
     public SecurityUser() {
     }
 
-    public SecurityUser(String username, String password, Collection<? extends GrantedAuthority> authorities, boolean enabled, User userInfo) {
+    public SecurityUser(String username, String password, Collection<? extends GrantedAuthority> authorities, boolean enabled, Users userInfo) {
         super();
         this.username = username;
         this.password = password;
@@ -64,7 +64,7 @@ public class SecurityUser implements UserDetails {
         return enabled;
     }
 
-    public User getUserInfo() {
+    public Users getUserInfo() {
         return userInfo;
     }
 }

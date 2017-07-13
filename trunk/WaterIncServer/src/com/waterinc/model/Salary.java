@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by Asus on 7/12/2017.
+ * Created by hongducphan on 7/13/17.
  */
 @Entity
 public class Salary {

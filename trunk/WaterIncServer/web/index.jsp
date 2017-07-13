@@ -155,13 +155,6 @@
 
         <!-- Main content -->
         <section class="content">
-            <!--&lt;!&ndash; Small boxes (Stat box) &ndash;&gt;-->
-            <!--<div class="row">-->
-            <!---->
-            <!---->
-
-            <!--</div>-->
-            <!-- /.row -->
             <!-- Main row -->
             <div class="row">
                 <!-- Left col -->
@@ -180,22 +173,31 @@
                             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <h3>Product List</h3>
+                    </div>
                     <!-- ./col -->
                     <div class="col-md-12">
                         <!-- table -->
                         <table class="w3-table-all w3-hoverable">
-                            <tr style="background-color: #00a65a; color: #FFF">
-                                <th>Name</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
+                            <thead>
+                                <tr style="background-color: #00a65a; color: #FFF">
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
                             <tbody id="data">
                                 <tr>
-                                    <td>Jill</td>
-                                    <td>Smith</td>
-                                    <td>50</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="status"></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -302,7 +304,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="resources/js/demo.js"></script>
 
-<script src="resources/js/myjs.js"></script>
+<script src="resources/js/Product.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.waterinc.model.Order;
+import com.waterinc.model.Orders;
 import com.waterinc.repositories.OrderRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +20,15 @@ public class OrderController {
 
     @JsonView(View.ProductView.class)
     @RequestMapping(value = "findAllOrder", method = RequestMethod.GET)
-    public List<Order> findAllOrder() {
-        List<Order> result = orderRepository.findAll();
+    public List<Orders> findAllOrder() {
+        List<Orders> result = orderRepository.findAll();
         System.out.println(result.size());
         return result;
     }
 
     @RequestMapping(value = "addOrder", method = RequestMethod.POST)
-    public Order addNewOrder(Timestamp createDate, double total, int status) {
-        Order order = new Order();
+    public Orders addNewOrder(Timestamp createDate, double total, int status) {
+        Orders order = new Orders();
         order.setOrderCreateDate(createDate);
         order.setOrderTotal(total);
         order.setOrderStatus(status);
@@ -36,8 +36,8 @@ public class OrderController {
     }
 
     @RequestMapping(value = "updateOrder", method = RequestMethod.POST)
-    public Order updateOrder(int id, Timestamp createDate, double total, int status) {
-        Order order = orderRepository.findOne(id);
+    public Orders updateOrder(int id, Timestamp createDate, double total, int status) {
+        Orders order = orderRepository.findOne(id);
         order.setOrderCreateDate(createDate);
         order.setOrderTotal(total);
         order.setOrderStatus(status);
@@ -46,7 +46,7 @@ public class OrderController {
 
     @RequestMapping(value = "removeProduct", method = RequestMethod.POST)
     public void removeOrder(int id) {
-        Order order = orderRepository.findOne(id);
+        Orders order = orderRepository.findOne(id);
         if (order != null) {
             orderRepository.delete(order);
         }

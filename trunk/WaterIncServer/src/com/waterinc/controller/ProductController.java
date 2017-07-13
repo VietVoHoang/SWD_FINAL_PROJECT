@@ -1,7 +1,7 @@
 package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.waterinc.model.Product;
+import com.waterinc.model.Products;
 import com.waterinc.repositories.ProductRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,15 +24,15 @@ public class ProductController {
 
     @JsonView(View.ProductView.class)
     @RequestMapping(value = "findAllProduct", method = RequestMethod.GET)
-    public List<Product> findAllProduct() {
-        List<Product> result = productRepository.findAll();
+    public List<Products> findAllProduct() {
+        List<Products> result = productRepository.findAll();
 //        System.out.println(result.size());
         return result;
     }
 
     @RequestMapping(value = "addProduct", method = RequestMethod.POST)
-    public Product addNewProduct(String productName, int quantity, double price) {
-        Product product = new Product();
+    public Products addNewProduct(String productName, int quantity, double price) {
+        Products product = new Products();
         product.setProductName(productName);
         product.setProductQuantity(quantity);
         product.setProductPrice(price);
@@ -41,8 +41,8 @@ public class ProductController {
     }
 
     @RequestMapping(value = "updateProduct", method = RequestMethod.POST)
-    public Product updateProduct(int id, String productName, int quantity, double price) {
-        Product product = productRepository.findOne(id);
+    public Products updateProduct(int id, String productName, int quantity, double price) {
+        Products product = productRepository.findOne(id);
         product.setProductName(productName);
         product.setProductQuantity(quantity);
         product.setProductPrice(price);
@@ -50,18 +50,18 @@ public class ProductController {
         return productRepository.save(product);
     }
 
+    @JsonView(View.ProductView.class)
     @RequestMapping(value = "removeProduct", method = RequestMethod.POST)
-    public void removeProduct(int id) {
-        Product product = productRepository.findOne(id);
-        if (product != null) {
-            productRepository.delete(product);
-        }
+    public Products removeProduct(int id) {
+        Products product = productRepository.findOne(id);
+        product.setStatus(0);
+        return productRepository.save(product);
     }
 
     @JsonView(View.ProductView.class)
     @RequestMapping(value = "searchProductByName", method = RequestMethod.POST)
-    public List<Product> searchProductByName(String searchValue) {
-        List<Product> productList = new ArrayList<>();
+    public List<Products> searchProductByName(String searchValue) {
+        List<Products> productList = new ArrayList<>();
         return productList;
     }
 }

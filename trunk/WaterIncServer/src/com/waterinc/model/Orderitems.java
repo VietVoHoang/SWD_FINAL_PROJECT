@@ -3,16 +3,16 @@ package com.waterinc.model;
 import javax.persistence.*;
 
 /**
- * Created by Asus on 7/12/2017.
+ * Created by hongducphan on 7/13/17.
  */
 @Entity
-public class Orderitem {
+public class Orderitems {
     private Integer id;
     private Integer itemQuantity;
     private Integer productId;
     private Integer orderId;
-    private Product productByProductId;
-    private Order orderByOrderId;
+    private Products productsByProductId;
+    private Orders ordersByOrderId;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -59,13 +59,12 @@ public class Orderitem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Orderitem orderitem = (Orderitem) o;
+        Orderitems that = (Orderitems) o;
 
-        if (id != null ? !id.equals(orderitem.id) : orderitem.id != null) return false;
-        if (itemQuantity != null ? !itemQuantity.equals(orderitem.itemQuantity) : orderitem.itemQuantity != null)
-            return false;
-        if (productId != null ? !productId.equals(orderitem.productId) : orderitem.productId != null) return false;
-        if (orderId != null ? !orderId.equals(orderitem.orderId) : orderitem.orderId != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (itemQuantity != null ? !itemQuantity.equals(that.itemQuantity) : that.itemQuantity != null) return false;
+        if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
+        if (orderId != null ? !orderId.equals(that.orderId) : that.orderId != null) return false;
 
         return true;
     }
@@ -81,21 +80,21 @@ public class Orderitem {
 
     @ManyToOne
     @JoinColumn(name = "Product_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public Product getProductByProductId() {
-        return productByProductId;
+    public Products getProductsByProductId() {
+        return productsByProductId;
     }
 
-    public void setProductByProductId(Product productByProductId) {
-        this.productByProductId = productByProductId;
+    public void setProductsByProductId(Products productsByProductId) {
+        this.productsByProductId = productsByProductId;
     }
 
     @ManyToOne
     @JoinColumn(name = "Order_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public Order getOrderByOrderId() {
-        return orderByOrderId;
+    public Orders getOrdersByOrderId() {
+        return ordersByOrderId;
     }
 
-    public void setOrderByOrderId(Order orderByOrderId) {
-        this.orderByOrderId = orderByOrderId;
+    public void setOrdersByOrderId(Orders ordersByOrderId) {
+        this.ordersByOrderId = ordersByOrderId;
     }
 }

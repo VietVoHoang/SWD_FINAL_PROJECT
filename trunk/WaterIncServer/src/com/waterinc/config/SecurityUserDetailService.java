@@ -1,7 +1,7 @@
 package com.waterinc.config;
 
 
-import com.waterinc.model.User;
+import com.waterinc.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,14 +24,14 @@ public class SecurityUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByUsername(username);
+        Users user = userRepo.findByUsername(username);
         if (user != null) {
             return new SecurityUser(user.getUsername(), user.getPassword(), getAuthorities(user), user.getEnable() == 1, user);
         }
         throw new UsernameNotFoundException(username);
     }
 
-    private Set<GrantedAuthority> getAuthorities(User user) {
+    private Set<GrantedAuthority> getAuthorities(Users user) {
         Set<GrantedAuthority> authorities = new HashSet<>();
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(user.getRole());
         authorities.add(grantedAuthority);

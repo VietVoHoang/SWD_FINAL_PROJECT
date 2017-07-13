@@ -13,6 +13,18 @@
         <class>com.waterinc.model.Orderitem</class>
         <class>com.waterinc.model.Salary</class>
         <class>com.waterinc.model.User</class>
+        <class>com.waterinc.model.BonuscoefficientEntity</class>
+        <class>com.waterinc.model.EmployeesEntity</class>
+        <class>com.waterinc.model.OrderitemsEntity</class>
+        <class>com.waterinc.model.OrdersEntity</class>
+        <class>com.waterinc.model.ProductsEntity</class>
+        <class>com.waterinc.model.SalaryEntity</class>
+        <class>com.waterinc.model.UsersEntity</class>
+        <class>com.waterinc.model.Employees</class>
+        <class>com.waterinc.model.Orderitems</class>
+        <class>com.waterinc.model.Orders</class>
+        <class>com.waterinc.model.Products</class>
+        <class>com.waterinc.model.Users</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/waterincdb"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
