@@ -1,5 +1,8 @@
 package com.waterinc.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.view.View;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
@@ -9,11 +12,17 @@ import java.util.Collection;
  */
 @Entity
 public class Orders {
+    @JsonView({View.OrderView.class})
     private Integer id;
+    @JsonView({View.OrderView.class})
     private Timestamp orderCreateDate;
+    @JsonView({View.OrderView.class})
     private Double orderTotal;
+    @JsonView({View.OrderView.class})
     private Integer orderStatus;
+    @JsonView({View.OrderView.class})
     private String customerName;
+    @JsonView({View.OrderView.class})
     private String customerPhone;
     private String customerAddress;
     private Integer employeeId;

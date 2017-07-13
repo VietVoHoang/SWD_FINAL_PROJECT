@@ -5,4 +5,7 @@ package com.waterinc.view;
  */
 public class View {
     public interface ProductView{}
+    public interface UserView{}
+    public interface EmployeeView{}
+    public interface OrderView{}
 }

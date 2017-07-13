@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,11 +20,20 @@ public class OrderController {
     @Autowired
     OrderRepository orderRepository;
 
-    @JsonView(View.ProductView.class)
+    @JsonView(View.OrderView.class)
     @RequestMapping(value = "findAllOrder", method = RequestMethod.GET)
-    public List<Orders> findAllOrder() {
-        List<Orders> result = orderRepository.findAll();
+    public List findAllOrder() {
+        List<Orders> result = new ArrayList<>();
+        try {
+            result = orderRepository.findAll();
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+        Collections.reverse(result);
         System.out.println(result.size());
+        for (int i = 0; i < result.size(); i++) {
+            System.out.println(result.get(i).getCustomerName());
+        }
         return result;
     }
 

@@ -179,7 +179,7 @@
                     <!-- ./col -->
                     <div class="col-md-12">
                         <!-- table -->
-                        <table class="w3-table-all w3-hoverable">
+                        <table class="w3-table-all w3-hoverable" id="tableArea">
                             <thead>
                                 <tr style="background-color: #00a65a; color: #FFF">
                                     <th>Name</th>
@@ -305,6 +305,12 @@
 <script src="resources/js/demo.js"></script>
 
 <script src="resources/js/Product.js"></script>
+
+
+<script src="resources/js/Order.js"></script>
+<script>
+    loadAllOrder();
+</script>
 </body>
 
 </html>
