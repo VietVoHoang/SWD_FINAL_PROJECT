@@ -42,12 +42,44 @@ public class OrderController {
     }
 
     @RequestMapping(value = "addOrder", method = RequestMethod.POST)
-    public Orders addNewOrder(Timestamp createDate, double total, int status) {
+    public Orders addNewOrder(Timestamp createDate,
+                              double total,
+                              int status,
+                              String cusName,
+                              String cusPhone,
+                              String cusAddress,
+                              int empId) {
         Orders order = new Orders();
         order.setOrderCreateDate(createDate);
         order.setOrderTotal(total);
         order.setOrderStatus(status);
+        order.setCustomerName(cusName);
+        order.setCustomerAddress(cusAddress);
+        order.setCustomerPhone(cusPhone);
+        order.setEmployeeId(empId);
         return orderRepository.save(order);
+    }
+
+    @RequestMapping(value = "addOrderMobile", method = RequestMethod.POST)
+    public int addNewOrderTest(String json) {
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> map = null;
+        try {
+            map = mapper.readValue(json, Map.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(map);
+        Orders order = new Orders();
+        Timestamp ts = Timestamp.valueOf((String) map.get("createDate"));
+        order.setOrderCreateDate(ts);
+        order.setOrderTotal(((Integer) map.get("total")) * 1.0);
+        order.setOrderStatus((Integer) map.get("status"));
+        order.setCustomerName((String) map.get("cusName"));
+        order.setCustomerAddress((String) map.get("cusAddress"));
+        order.setCustomerPhone((String) map.get("cusPhone"));
+        return orderRepository.save(order).getId();
+//        return 0;
     }
 
     @RequestMapping(value = "updateOrder", method = RequestMethod.POST)
