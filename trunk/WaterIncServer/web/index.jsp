@@ -269,6 +269,52 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<!-- Modal -->
+<div id="addOrderModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Order</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newOrderCusName">Customer name</label>
+                        <input type="text" class="form-control" id="newOrderCusName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusPhone">Customer Phone</label>
+                        <input type="text" class="form-control" id="newOrderCusPhone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusAddress">Customer Address</label>
+                        <input type="text" class="form-control" id="newOrderCusAddress" placeholder="Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusAddress">Order status</label>
+                        <select class="form-control" id="orderStatus">
+                            <option value="1">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Create</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- ./Modal -->
+
 
 <!-- jQuery 2.2.3 -->
 <script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
