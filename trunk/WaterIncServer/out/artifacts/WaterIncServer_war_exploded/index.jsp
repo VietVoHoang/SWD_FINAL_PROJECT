@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/mycss.css">
     <link rel="shortcut icon" href="/resources/img/logo.png">
@@ -179,7 +181,7 @@
                     <!-- ./col -->
                     <div class="col-md-12">
                         <!-- table -->
-                        <table class="w3-table-all w3-hoverable">
+                        <table class="w3-table-all w3-hoverable" id="tableArea">
                             <thead>
                                 <tr style="background-color: #00a65a; color: #FFF">
                                     <th>Name</th>
@@ -267,6 +269,52 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<!-- Modal -->
+<div id="addOrderModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Order</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newOrderCusName">Customer name</label>
+                        <input type="text" class="form-control" id="newOrderCusName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusPhone">Customer Phone</label>
+                        <input type="text" class="form-control" id="newOrderCusPhone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusAddress">Customer Address</label>
+                        <input type="text" class="form-control" id="newOrderCusAddress" placeholder="Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusAddress">Order status</label>
+                        <select class="form-control" id="orderStatus">
+                            <option value="1">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Create</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- ./Modal -->
+
 
 <!-- jQuery 2.2.3 -->
 <script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -303,8 +351,16 @@
 <script src="resources/js/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="resources/js/demo.js"></script>
+<!-- datatable -->
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
 <script src="resources/js/Product.js"></script>
+
+
+<script src="resources/js/Order.js"></script>
+<script>
+    loadAllProduct();
+</script>
 </body>
 
 </html>

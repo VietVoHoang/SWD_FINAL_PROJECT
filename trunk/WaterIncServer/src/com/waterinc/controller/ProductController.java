@@ -5,6 +5,7 @@ import com.waterinc.model.Products;
 import com.waterinc.repositories.ProductRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,11 +52,13 @@ public class ProductController {
     }
 
     @JsonView(View.ProductView.class)
+    @Transactional
     @RequestMapping(value = "removeProduct", method = RequestMethod.POST)
-    public Products removeProduct(int id) {
+    public List<Products> removeProduct(int id) {
         Products product = productRepository.findOne(id);
         product.setStatus(0);
-        return productRepository.save(product);
+        productRepository.save(product);
+        return findAllProduct();
     }
 
     @JsonView(View.ProductView.class)

@@ -359,7 +359,7 @@
 
 <script src="resources/js/Order.js"></script>
 <script>
-    loadAllOrder();
+    loadAllProduct();
 </script>
 </body>
 
