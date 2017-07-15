@@ -128,7 +128,7 @@
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="#" onclick="loadAllProduct()">
                         <i class="fa fa-cubes"></i>
                         <span>Manage Product</span>
                         <span class="pull-right-container">
@@ -269,7 +269,7 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-<!-- Modal -->
+<!-- Order Modal -->
 <div id="addOrderModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -313,8 +313,41 @@
 
     </div>
 </div>
-<!-- ./Modal -->
 
+<!-- Add Product Modal -->
+<div id="addProductModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form id="addProductForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Product</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newProductname">Name</label>
+                        <input type="text" name="productName" class="form-control" id="newProductname" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="newProductQuantity">Quantity</label>
+                        <input type="number" name="quantity" class="form-control" id="newProductQuantity" placeholder="Quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="newProductPrice">Price</label>
+                        <input type="number" name="price" class="form-control" id="newProductPrice" placeholder="Price">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="createProduct('#addProductModal')">Create</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
 
 <!-- jQuery 2.2.3 -->
 <script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -359,7 +392,7 @@
 
 <script src="resources/js/Order.js"></script>
 <script>
-    loadAllProduct();
+    loadAllOrder();
 </script>
 </body>
 

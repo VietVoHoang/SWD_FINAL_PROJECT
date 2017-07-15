@@ -2,8 +2,6 @@
  * Created by hongducphan on 7/12/17.
  */
 
-var idToDelete;
-
 var loadAllProduct = function () {
     $.ajax({
         url: '/findAllProduct',
@@ -25,7 +23,7 @@ var loadAllProduct = function () {
             var tbody = $('<tbody id="data"/>');
             for (var i = 0; i < data.length; i++) {
                 var status = data[i].status;
-                if(status == '1') {
+                if (status == '1') {
                     status = "Stocking";
                 } else {
                     status = "Not for sale";
@@ -35,17 +33,24 @@ var loadAllProduct = function () {
                     + '<td>' + data[i].productQuantity + '</td>'
                     + '<td>' + data[i].productPrice + '</td>'
                     + '<td>' + status + '</td>');
-                row.append('<td><button class="btn btn-default"><i class="fa fa-pencil"></i></button></td>');
-                row.append('<td><button class="btn btn-default" onclick="testAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="updateAppendModal(' + data[i].id + ')"><i class="fa fa-pencil"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
             table.append(tbody);
             table.DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            table.prev().remove();
+            table.prev().after(div);
         }
     })
 };
 
-var testAppendModal = function (id) {
+var deleteAppendModal = function (id) {
     var confirmModal = $('<div id="deleteModal' + id + '" class="modal fade in" role="dialog" style="display: block;">' +
         '<div class="modal-dialog">' +
         '<div class="modal-content">' +
@@ -65,23 +70,68 @@ var testAppendModal = function (id) {
         '</div>');
     $('body').append(confirmModal);
 };
+
 var closeDeleteModal = function (modalId) {
     $(modalId).remove();
-}
+};
 
-var removeProduct = function (id, modalId) {
+var updateAppendModal = function (id) {
+    var updateModal = $('<div id="updateProductModal' + id + '" class="modal fade in" role="dialog" style="display: block;">' +
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+        '<form id="updateProductForm">' +
+        '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal" onclick="closeUpdateModal(\'#updateProductModal' + id + '\')">&times;</button>' +
+        '<h4 class="modal-title">Update Product</h4>' +
+        '</div>' +
+        '<div class="modal-body">' +
+        '<div class="form-group">' +
+        '<label for="updateId">ID</label>' +
+        '<input type="hidden" name="id" class="form-control" id="updateId" value="' + id + '"/>' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label for="updateProductname">Name</label>' +
+        '<input type="text" name="productName" class="form-control" id="updateProductname" placeholder="Name"/>' +//dm s h lai update dc
+        '</div>' +
+        '<div class="form-group">' +
+        '<label for="updateProductQuantity">Quantity</label>' +
+        '<input type="number" name="quantity" class="form-control" id="updateProductQuantity" placeholder="Quantity"/>' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label for="updateProductPrice">Price</label>' +
+        '<input type="number" name="price" class="form-control" id="updateProductPrice" placeholder="Price"/>' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label for="updateProductStatus">Status</label>' +
+        '<input type="text" name="status" class="form-control" id="updateProductStatus" placeholder="Status"/>' +
+        '</div>' +
+        '</div>' +
+        '<div class="modal-footer">' +
+        '<button type="button" class="btn btn-success" data-dismiss="modal" onclick="updateProduct(' + id + ', \'#updateProductModal' + id + '\')">Update</button>' +
+        '<button type="button" class="btn btn-default" data-dismiss="modal" onclick="closeUpdateModal(\'#updateProductModal' + id + '\')">Close</button>' +
+        '</div>' +
+        '</form>' +
+        '</div>' +
+        '</div>' +
+        '</div>');
+    $('body').append(updateModal);
+};
+
+var closeUpdateModal = function (modalId) {
+    $(modalId).remove();
+};
+
+var updateProduct = function (id, modalId) {
     $.ajax({
-        url: '/removeProduct',
+        url: '/updateProduct',
         method: 'POST',
-        data: {
-            "id": id,
-        },
+        data: $('#updateProductForm').serialize(),
         success: function (data) {
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
                 var status = data[i].status;
-                if(status == '1') {
+                if (status == '1') {
                     status = "Stocking";
                 } else {
                     status = "Not for sale";
@@ -91,11 +141,70 @@ var removeProduct = function (id, modalId) {
                     + '<td>' + data[i].productQuantity + '</td>'
                     + '<td>' + data[i].productPrice + '</td>'
                     + '<td>' + status + '</td>');
-                row.append('<td><button class="btn btn-default"><i class="fa fa-pencil"></i></button></td>');
-                row.append('<td><button class="btn btn-default" onclick="testAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="updateAppendModal(' + data[i].id + ')"><i class="fa fa-pencil"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
         }
-    })
+    });
+    closeUpdateModal(modalId);
+};
+
+var removeProduct = function (id, modalId) {
+    $.ajax({
+        url: '/removeProduct',
+        method: 'POST',
+        data: {
+            "id": id
+        },
+        success: function (data) {
+            var tbody = $('#data');
+            tbody.empty();
+            for (var i = 0; i < data.length; i++) {
+                var status = data[i].status;
+                if (status == '1') {
+                    status = "Stocking";
+                } else {
+                    status = "Not for sale";
+                }
+                var row = $('<tr/>');
+                row.append('<td>' + data[i].productName + '</td>'
+                    + '<td>' + data[i].productQuantity + '</td>'
+                    + '<td>' + data[i].productPrice + '</td>'
+                    + '<td>' + status + '</td>');
+                row.append('<td><button class="btn btn-default" onclick="updateAppendModal(' + data[i].id + ')"><i class="fa fa-pencil"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
+                tbody.append(row);
+            }
+        }
+    });
     closeDeleteModal(modalId);
+};
+
+var createProduct = function () {
+    $.ajax({
+        url: '/addProduct',
+        method: 'POST',
+        data: $('#addProductForm').serialize(),
+        success: function (data) {
+            var tbody = $('#data');
+            tbody.empty();
+            for (var i = 0; i < data.length; i++) {
+                var status = data[i].status;
+                if (status == '1') {
+                    status = "Stocking";
+                } else {
+                    status = "Not for sale";
+                }
+                var row = $('<tr/>');
+                row.append('<td>' + data[i].productName + '</td>'
+                    + '<td>' + data[i].productQuantity + '</td>'
+                    + '<td>' + data[i].productPrice + '</td>'
+                    + '<td>' + status + '</td>');
+                row.append('<td><button class="btn btn-default" onclick="updateAppendModal(' + data[i].id + ')"><i class="fa fa-pencil"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
+                tbody.append(row);
+            }
+        }
+    });
 };

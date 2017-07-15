@@ -31,24 +31,28 @@ public class ProductController {
         return result;
     }
 
+    @JsonView(View.ProductView.class)
     @RequestMapping(value = "addProduct", method = RequestMethod.POST)
-    public Products addNewProduct(String productName, int quantity, double price) {
+    public List<Products> addNewProduct(String productName, int quantity, double price) {
         Products product = new Products();
         product.setProductName(productName);
         product.setProductQuantity(quantity);
         product.setProductPrice(price);
         product.setStatus(1);
-        return productRepository.save(product);
+        productRepository.save(product);
+        return findAllProduct();
     }
 
+    @JsonView(View.ProductView.class)
     @RequestMapping(value = "updateProduct", method = RequestMethod.POST)
-    public Products updateProduct(int id, String productName, int quantity, double price) {
+    public List<Products> updateProduct(int id, String productName, int quantity, double price, int status) {
         Products product = productRepository.findOne(id);
         product.setProductName(productName);
         product.setProductQuantity(quantity);
         product.setProductPrice(price);
-        product.setStatus(1);
-        return productRepository.save(product);
+        product.setStatus(status);
+        productRepository.save(product);
+        return findAllProduct();
     }
 
     @JsonView(View.ProductView.class)
