@@ -44,6 +44,18 @@ public class OrderController {
         return result;
     }
 
+    @JsonView(View.OrderView.class)
+    @RequestMapping(value = "findAllOrderNotDelivered", method = RequestMethod.GET)
+    public List findAllOrderNotDelivered() {
+        List<Orders> result = new ArrayList<>();
+        try {
+            result = orderRepository.findAllByOrderStatus(2);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+        return result;
+    }
+
     @RequestMapping(value = "addOrder", method = RequestMethod.POST)
     public Orders addNewOrder(Timestamp createDate,
                               double total,
@@ -82,7 +94,6 @@ public class OrderController {
         order.setCustomerAddress((String) map.get("cusAddress"));
         order.setCustomerPhone((String) map.get("cusPhone"));
         return orderRepository.save(order).getId();
-//        return 0;
     }
 
     @RequestMapping(value = "updateOrder", method = RequestMethod.POST)

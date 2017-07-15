@@ -8,4 +8,5 @@ public class View {
     public interface UserView{}
     public interface EmployeeView{}
     public interface OrderView{}
+	public interface OrderItemView{}
 }
