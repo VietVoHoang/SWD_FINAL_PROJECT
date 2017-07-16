@@ -1,20 +1,26 @@
 package com.waterinc.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.view.View;
+
+import javax.persistence.*;
 
 /**
  * Created by hongducphan on 7/13/17.
  */
 @Entity
 public class Salary {
+    @JsonView(View.SalaryView.class)
     private Integer id;
+
+    @JsonView(View.SalaryView.class)
     private Double salaryByDay;
+
+    @JsonView(View.SalaryView.class)
     private Double salaryByHour;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;

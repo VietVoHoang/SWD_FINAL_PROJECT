@@ -1,20 +1,26 @@
 package com.waterinc.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.view.View;
+
+import javax.persistence.*;
 
 /**
  * Created by hongducphan on 7/13/17.
  */
 @Entity
 public class Bonuscoefficient {
+    @JsonView(View.BonuscoefficientView.class)
     private Integer id;
+
+    @JsonView(View.BonuscoefficientView.class)
     private Integer coefficientByDay;
+
+    @JsonView(View.BonuscoefficientView.class)
     private Integer coefficientByHour;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;

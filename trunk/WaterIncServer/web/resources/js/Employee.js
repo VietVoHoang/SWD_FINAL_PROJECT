@@ -2,7 +2,33 @@
  * Created by hongducphan on 7/16/17.
  */
 
+var salaryByDay, salaryByHour, coefficientByDay, coefficientByHour;
+
+var calculateSalary = function (baseSalary, bonusDay, dayOff, hourOff, bonusHour) {
+    return baseSalary - (salaryByDay * dayOff) - (salaryByHour * hourOff) + (salaryByDay * bonusDay) + (salaryByHour * bonusHour);
+};
+
 var loadAllEmployee = function () {
+    $.ajax({
+        url: '/getAllSalary',
+        method: 'GET',
+        success: function (data) {
+            console.log(data);
+            salaryByDay = data[0].salaryByDay;
+            salaryByHour = data[0].salaryByHour;
+        }
+    });
+
+    $.ajax({
+        url: '/getAllBonuscoefficient',
+        method: 'GET',
+        success: function (data) {
+            console.log(data);
+            coefficientByDay = data[0].coefficientByDay;
+            coefficientByHour = data[0].coefficientByHour;
+        }
+    });
+
     $.ajax({
         url: '/getAllEmployee',
         method: 'GET',
@@ -14,18 +40,20 @@ var loadAllEmployee = function () {
                 '<tr style="background-color: #00a65a; color: #FFF">' +
                 '<th>Name</th>' +
                 '<th>Status</th>' +
-                '<th>Day Off</th>' +
-                '<th>Base salary</th>' +
                 '<th>Title</th>' +
+                '<th>Day Off</th>' +
+
                 '<th>Bonus day</th>' +
                 '<th>Hour off</th>' +
                 '<th>Bonus hour</th>' +
+                '<th>Salary</th>' +
                 '<th></th>' +
                 '<th></th>' +
                 '</tr>' +
                 '</thead>');
             var tbody = $('<tbody id="data"/>');
             for (var i = 0; i < data.length; i++) {
+                var salary = calculateSalary(data[i].baseSalary, data[i].bonusDay, data[i].dayOff, data[i].hourOff, data[i].bonusHour);
                 var status = data[i].status;
                 if (status == '1') {
                     status = "Working";
@@ -35,12 +63,13 @@ var loadAllEmployee = function () {
                 var row = $('<tr/>');
                 row.append('<td>' + data[i].name + '</td>'
                     + '<td>' + status + '</td>'
-                    + '<td>' + data[i].dayOff + '</td>'
-                    + '<td>' + data[i].baseSalary + '</td>'
                     + '<td>' + data[i].titleName + '</td>'
+                    + '<td>' + data[i].dayOff + '</td>'
+
                     + '<td>' + data[i].bonusDay + '</td>'
                     + '<td>' + data[i].hourOff + '</td>'
-                    + '<td>' + data[i].bonusHour + '</td>');
+                    + '<td>' + data[i].bonusHour + '</td>'
+                    + '<td>' + salary + '</td>');
                 row.append('<td><button class="btn btn-default" onclick="updateEmployeeAppendModal(' + data[i].id + ')"><i class="fa fa-pencil"></i></button></td>');
                 row.append('<td><button class="btn btn-default" onclick="deleteEmployeeAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);

@@ -9,4 +9,6 @@ public class View {
     public interface EmployeeView{}
     public interface OrderView{}
 	public interface OrderItemView{}
+	public interface SalaryView{}
+	public interface BonuscoefficientView{}
 }

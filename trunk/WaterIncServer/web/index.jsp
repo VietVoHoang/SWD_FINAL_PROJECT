@@ -184,22 +184,12 @@
                         <table class="w3-table-all w3-hoverable" id="tableArea">
                             <thead>
                                 <tr style="background-color: #00a65a; color: #FFF">
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Status</th>
-                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody id="data">
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td id="status"></td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
