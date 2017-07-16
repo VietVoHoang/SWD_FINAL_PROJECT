@@ -36,7 +36,7 @@
     <link rel="shortcut icon" href="/resources/img/logo.png">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" onload="loadAllOrder()">
 <div class="wrapper">
 
     <header class="main-header">
@@ -104,7 +104,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="treeview active">
-                    <a href="#">
+                    <a href="#" onclick="loadAllOrder()">
                         <i class="fa fa-newspaper-o"></i>
                         <span>Manage Oder</span>
                         <span class="pull-right-container">
@@ -122,7 +122,7 @@
                     </a>
                 </li>
                 <li class="active treeview">
-                    <a href="#">
+                    <a href="#" onclick="loadAllEmployee()">
                         <i class="fa fa-users"></i> <span>Manage Employee</span>
                         <span class="pull-right-container"></span>
                     </a>
@@ -305,7 +305,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Create</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="addNewOrder()">Create</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </form>
@@ -341,6 +341,41 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal" onclick="createProduct('#addProductModal')">Create</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- Add Employee Modal -->
+<div id="addEmployeeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form id="addEmployeeForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Employee</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newEmployeeName">Name</label>
+                        <input type="text" name="name" class="form-control" id="newEmployeeName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="newBaseSalary">Base salary</label>
+                        <input type="number" name="baseSalary" class="form-control" id="newBaseSalary" placeholder="Base salary">
+                    </div>
+                    <div class="form-group">
+                        <label for="newTitleName">Title</label>
+                        <input type="text" name="titleName" class="form-control" id="newTitleName" placeholder="Title">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="createEmployee('#addEmployeeModal')">Create</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </form>
@@ -387,13 +422,9 @@
 <!-- datatable -->
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
-<script src="resources/js/Product.js"></script>
-
-
 <script src="resources/js/Order.js"></script>
-<script>
-    loadAllOrder();
-</script>
+<script src="resources/js/Product.js"></script>
+<script src="resources/js/Employee.js"></script>
 </body>
 
 </html>

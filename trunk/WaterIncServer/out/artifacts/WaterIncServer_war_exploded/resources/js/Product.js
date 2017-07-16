@@ -86,7 +86,6 @@ var updateAppendModal = function (id) {
         '</div>' +
         '<div class="modal-body">' +
         '<div class="form-group">' +
-        '<label for="updateId">ID</label>' +
         '<input type="hidden" name="id" class="form-control" id="updateId" value="' + id + '"/>' +
         '</div>' +
         '<div class="form-group">' +
@@ -103,7 +102,10 @@ var updateAppendModal = function (id) {
         '</div>' +
         '<div class="form-group">' +
         '<label for="updateProductStatus">Status</label>' +
-        '<input type="text" name="status" class="form-control" id="updateProductStatus" placeholder="Status"/>' +
+        '<select class="form-control" id="updateProductStatus" name="status">' +
+        '<option value="0">Not for sale</option>' +
+        '<option value="1">Stocking</option>' +
+        '</select>' +
         '</div>' +
         '</div>' +
         '<div class="modal-footer">' +

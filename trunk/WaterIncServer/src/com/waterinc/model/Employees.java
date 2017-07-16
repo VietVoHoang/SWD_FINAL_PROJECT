@@ -1,5 +1,8 @@
 package com.waterinc.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.view.View;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -8,19 +11,38 @@ import java.util.Collection;
  */
 @Entity
 public class Employees {
+    @JsonView(View.EmployeeView.class)
     private Integer id;
+
+    @JsonView(View.EmployeeView.class)
     private String name;
+
+    @JsonView(View.EmployeeView.class)
     private Integer status;
+
+    @JsonView(View.EmployeeView.class)
     private Integer dayOff;
+
+    @JsonView(View.EmployeeView.class)
     private Double baseSalary;
+
+    @JsonView(View.EmployeeView.class)
     private String titleName;
+
+    @JsonView(View.EmployeeView.class)
     private Integer bonusDay;
+
+    @JsonView(View.EmployeeView.class)
     private Integer hourOff;
+
+    @JsonView(View.EmployeeView.class)
     private Integer bonusHour;
+
     private Collection<Orders> ordersById;
     private Collection<Users> usersById;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;
