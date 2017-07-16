@@ -3,54 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlue"
-    tools:context=".OrderActivity">
+    android:background="@color/colorGray"
+    tools:context=".activity.OrderActivity">
 
-
-    <RelativeLayout
-        android:id="@+id/relOrderList"
+    <Button
+        android:id="@+id/btnProductTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:background="@color/colorGray">
+        android:layout_height="60dp"
+        android:background="@color/colorBlue"
+        android:enabled="false"
+        android:text="NAOMI PRODUCTS"
+        android:textColor="@android:color/background_light"
+        android:textSize="13pt" />
 
-        <Button
-            android:id="@+id/txtTitle"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorGreen"
-            android:text="NAOMI PRODUCTS"
-            android:textColor="@android:color/background_light"
-            android:textSize="9pt"
-            android:enabled="false"/>
+    <ListView
+        android:id="@+id/listProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnViewOrder"
+        android:layout_below="@+id/btnProductTitle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="@color/colorGray"
+        android:dividerHeight="8sp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:scrollbars="none" />
 
-        <ListView
-            android:id="@+id/listProduct"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtTitle"
-            android:divider="@color/colorGray"
-            android:dividerHeight="8sp"
-            android:paddingBottom="20dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingTop="10dp" />
-
-        <Button
-            android:id="@+id/btnOrder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorDarkGray"
-            android:text="ORDER"
-            android:textSize="8pt"
-            android:textColor="@android:color/background_light"/>
-
-    </RelativeLayout>
-
-
+    <Button
+        android:id="@+id/btnViewOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/rounded_rectangle"
+        android:backgroundTint="@color/colorGreen"
+        android:text="VIEW YOUR CART"
+        android:textColor="@android:color/background_light"
+        android:textSize="8pt" />
 
 </RelativeLayout>

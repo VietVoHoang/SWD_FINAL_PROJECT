@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shadow_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtNameItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="name:"
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtQuantityItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtNameItem"
+        android:layout_below="@+id/txtNameItem"
+        android:layout_marginTop="10dp"
+        android:text="quantity: "
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtPriceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtNameItem"
+        android:layout_below="@+id/txtQuantityItem"
+        android:layout_marginTop="10dp"
+        android:text="Price: "
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtTotalItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtNameItem"
+        android:layout_below="@+id/txtPriceItem"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="total: "
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtNameProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtNameItem"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/txtNameItem"
+        android:text="AAAAAAAAAAA"
+        android:textColor="@android:color/background_dark"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtQuantityProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtQuantityItem"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/txtQuantityItem"
+        android:text="AAAAAAAAAAA"
+        android:textColor="@android:color/background_dark"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtPriceProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtPriceItem"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/txtPriceItem"
+        android:text="AAAAAAAAAAA"
+        android:textColor="@android:color/background_dark"
+        android:textSize="6pt" />
+
+    <TextView
+        android:id="@+id/txtTotalProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtTotalItem"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/txtTotalItem"
+        android:text="AAAAAAAAAAA"
+        android:textColor="@android:color/background_dark"
+        android:textSize="6pt" />
+
+</RelativeLayout>

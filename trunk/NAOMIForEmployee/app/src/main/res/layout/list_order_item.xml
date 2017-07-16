@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorGray">
+
+    <Button
+        android:id="@+id/btnOrderItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorBlue"
+        android:enabled="false"
+        android:text="LIST ORDER ITEMS"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="10pt" />
+
+    <ListView
+        android:id="@+id/lsOrderItem"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/btnOrderItemTitle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="@color/colorGray"
+        android:dividerHeight="8sp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:scrollbars="none" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lsOrderItem"
+        android:backgroundTint="@color/colorGreen"
+        android:text="Delivered Confirm"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="8pt" />
+
+</RelativeLayout>

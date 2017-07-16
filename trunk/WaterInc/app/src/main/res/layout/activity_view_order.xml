@@ -1,24 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlue"
-    tools:context=".ViewOrder">
+    android:background="@color/colorGray"
+    tools:context=".activity.ViewOrder">
+
+    <Button
+        android:id="@+id/btnCartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorBlue"
+        android:text="CART"
+        android:textColor="@android:color/background_light"
+        android:textSize="13pt" />
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/rounded_rectangle"
+        android:backgroundTint="@color/colorGreen"
+        android:text="CONFIRM"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="8pt" />
+
+    <ImageView
+        android:id="@+id/imgAccount"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/btnCartTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/account_picture" />
+
+    <ImageView
+        android:id="@+id/imgPhone"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/imgAccount"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/imgAddress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/imgPhone"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/address" />
+
+    <TextView
+        android:id="@+id/txtNameFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnCartTitle"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Võ Thạch Nguyên"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_dark"
+        android:textSize="7pt" />
+
+    <TextView
+        android:id="@+id/txtPhoneFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/imgPhone"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtNameFinal"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="01233461809"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_dark"
+        android:textSize="7pt" />
+
+    <TextView
+        android:id="@+id/txtAddressFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/imgAddress"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtPhoneFinal"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="48 Nguyễn tương, phan thiết"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_dark"
+        android:textSize="7pt" />
+
+    <TextView
+        android:id="@+id/txtCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAddressFinal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Shopping Cart"
+        android:textAllCaps="true"
+        android:textColor="@color/colorRed"
+        android:textSize="10pt" />
+
+    <ImageView
+        android:id="@+id/imgFooter"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_below="@id/txtCart"
+        android:layout_centerHorizontal="true"
+        android:src="@color/colorRed" />
 
     <RelativeLayout
-        android:id="@+id/relConfirmOrder"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp">
+        android:id="@+id/notificationLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPay"
+        android:layout_below="@+id/txtCart"
+        android:visibility="invisible">
 
+        <ImageView
+            android:id="@+id/imgSadFace"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/sad_face" />
 
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgSadFace"
+            android:layout_centerHorizontal="true"
+            android:text="You don't buy anything yet !"
+            android:textAlignment="center"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="11pt" />
 
     </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lstOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPay"
+        android:layout_below="@+id/imgFooter"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="@color/colorGray"
+        android:dividerHeight="8sp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp" />
 
 </RelativeLayout>

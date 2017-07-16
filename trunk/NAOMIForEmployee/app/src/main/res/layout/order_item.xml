@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:id="@+id/txtNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Product: "
+        android:textColor="@color/colorDarkGray"
+        android:textSize="7pt" />
+
+    <TextView
+        android:id="@+id/txtQuantityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNameTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Quantity: "
+        android:textColor="@color/colorDarkGray"
+        android:textSize="7pt" />
+
+    <TextView
+        android:id="@+id/txtTotalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtQuantityTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Total: "
+        android:textColor="@color/colorDarkGray"
+        android:textSize="7pt" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtNameTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/txtNameTitle"
+        android:text="NAOMI 330ML"
+        android:textColor="@color/colorDarkGray" />
+
+    <TextView
+        android:id="@+id/txtQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtQuantityTitle"
+        android:layout_alignLeft="@+id/txtName"
+        android:layout_toRightOf="@+id/txtQuantityTitle"
+        android:text="NAOMI 330ML"
+        android:textColor="@color/colorDarkGray" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtTotalTitle"
+        android:layout_alignLeft="@+id/txtName"
+        android:layout_toRightOf="@+id/txtQuantityTitle"
+        android:text="NAOMI 330ML"
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray" />
+
+
+</RelativeLayout>

@@ -10,7 +10,7 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:src="@drawable/success"/>
+        android:src="@drawable/success" />
 
     <TextView
         android:id="@+id/txtContent"
@@ -22,7 +22,7 @@
         android:layout_marginTop="10dp"
         android:text="ORDER SUCCESSFULLY"
         android:textAlignment="center"
-        android:textColor="@color/colorGreen"
-        android:textSize="11pt"/>
+        android:textColor="@android:color/background_dark"
+        android:textSize="10pt" />
 
 </RelativeLayout>

@@ -10,63 +10,63 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/account_picture"/>
+        android:src="@drawable/account_picture" />
 
     <TextView
         android:id="@+id/txtNameAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/imgPicture"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="VÕ THẠCH NGUYÊN"
         android:textAllCaps="true"
         android:textColor="@android:color/background_dark"
-        android:textSize="13pt"/>
+        android:textSize="13pt" />
 
     <ImageView
         android:id="@+id/imgPhone"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_below="@+id/txtNameAccount"
         android:layout_alignStart="@+id/txtNameAccount"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtNameAccount"
         android:layout_marginLeft="20dp"
-        android:src="@drawable/phone"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/phone" />
 
     <TextView
         android:id="@+id/txtPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtNameAccount"
         android:layout_alignEnd="@+id/txtNameAccount"
         android:layout_alignTop="@+id/imgPhone"
+        android:layout_below="@+id/txtNameAccount"
         android:layout_marginRight="20dp"
         android:text="01233461809"
         android:textColor="@android:color/background_dark"
-        android:textSize="8pt"/>
+        android:textSize="8pt" />
 
     <ImageView
         android:id="@+id/imgAddress"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_below="@+id/imgPhone"
         android:layout_alignStart="@+id/txtNameAccount"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/imgPhone"
         android:layout_marginLeft="20dp"
-        android:src="@drawable/address"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/address" />
 
     <TextView
         android:id="@+id/txtAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtPhone"
         android:layout_alignEnd="@+id/txtNameAccount"
         android:layout_alignTop="@+id/imgAddress"
-        android:layout_marginRight="20dp"
+        android:layout_below="@+id/txtPhone"
         android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
         android:text="123 Phạm Văn Đồng"
         android:textColor="@android:color/background_dark"
-        android:textSize="8pt"/>
+        android:textSize="8pt" />
 
 </RelativeLayout>

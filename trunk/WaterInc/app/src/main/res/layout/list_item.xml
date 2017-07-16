@@ -5,27 +5,50 @@
     android:background="@drawable/shadow_background">
 
     <TextView
+        android:id="@+id/txtNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="NAME"
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="6pt" />
+
+    <TextView
         android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtNameTitle"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
         android:text="Na-O-Mi 300ml"
         android:textColor="@android:color/background_dark"
-        android:textSize="15dp"/>
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/txtPriceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="PRICE"
+        android:textAllCaps="true"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="6pt" />
 
     <TextView
         android:id="@+id/txtPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtPriceTitle"
         android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
         android:text="1.500 VND"
         android:textColor="@android:color/background_dark"
-        android:textSize="15dp"/>
+        android:textSize="10pt" />
 
 </RelativeLayout>
