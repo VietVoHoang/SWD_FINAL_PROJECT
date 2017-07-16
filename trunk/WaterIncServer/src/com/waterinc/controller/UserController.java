@@ -1,7 +1,9 @@
 package com.waterinc.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.waterinc.model.Users;
 import com.waterinc.repositories.UserRepository;
+import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,15 +42,17 @@ public class UserController {
         return getAllUser();
     }
 
+    @JsonView({View.UserView.class})
     @RequestMapping(value = "updateUser", method = RequestMethod.POST)
-    public Users updateUser(int id, String userName, String password, int enable, String role, int empId) {
+    public List<Users> updateUser(int id, String userName, String password, int enable, String role, int empId) {
         Users user = userRepository.findOne(id);
         user.setUsername(userName);
         user.setPassword(password);
         user.setEnable(enable);
         user.setRole(role);
         user.setEmployeeId(empId);
-        return userRepository.save(user);
+        userRepository.save(user);
+        return getAllUser();
     }
 
     @JsonView({View.UserView.class})

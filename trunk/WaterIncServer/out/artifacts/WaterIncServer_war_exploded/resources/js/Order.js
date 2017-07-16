@@ -51,10 +51,6 @@ var loadAllOrder = function () {
                 'color: #fff;' +
                 '">Add new order&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
             table.prev().after(div);
-            var defaultSortCol = $('.sorting_asc')[0];
-            defaultSortCol.className = "sorting_desc";
-            defaultSortCol.setAttribute("aria-sort", "descending");
-            defaultSortCol.setAttribute("aria-label", "Id: activate to sort column ascending");
         }
     });
 };

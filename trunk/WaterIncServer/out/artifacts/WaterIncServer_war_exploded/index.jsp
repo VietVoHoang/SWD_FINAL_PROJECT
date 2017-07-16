@@ -113,7 +113,7 @@
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="#" onclick="loadAllUser()">
                         <i class="fa fa-user-secret"></i>
                         <span>Manage User</span>
                         <span class="pull-right-container">
@@ -374,6 +374,59 @@
     </div>
 </div>
 
+<!-- Modal new User -->
+<div id="addUserModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form id="addUserForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New User</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newOrderCusName">Username</label>
+                        <input type="text" class="form-control" id="newUserUsername" placeholder="Username"
+                               name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="newOrderCusPhone">Password</label>
+                        <input type="password" class="form-control" id="newUserPassword" placeholder="Password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="UserRole">User role</label>
+                        <select class="form-control" id="UserRole" name="role">
+                            <option value="ROLE_ADMIN">Admin</option>
+                            <option value="ROLE_USER">Normal User</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserEnable">User enable</label>
+                        <select class="form-control" id="UserEnable" name="enable">
+                            <option value="1">Enable</option>
+                            <option value="0">Disable</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserEmpId">User belong employee</label>
+                        <select class="form-control" id="UserEmpId" name="empId">
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="addNewUser()">Create
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- ./Modal new User -->
+
 <!-- jQuery 2.2.3 -->
 <script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!--<script src="js/jquery-3.1.1.min.js"></script>-->
@@ -415,6 +468,7 @@
 <script src="resources/js/Order.js"></script>
 <script src="resources/js/Product.js"></script>
 <script src="resources/js/Employee.js"></script>
+<script src="resources/js/User.js"></script>
 </body>
 
 </html>

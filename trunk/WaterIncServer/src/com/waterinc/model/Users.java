@@ -12,14 +12,19 @@ import javax.persistence.*;
 public class Users {
     @JsonView({View.UserView.class})
     private Integer id;
+
     @JsonView({View.UserView.class})
     private String username;
+
     @JsonView({View.UserView.class})
     private String password;
+
     @JsonView({View.UserView.class})
     private Integer enable;
+
     @JsonView({View.UserView.class})
     private String role;
+
     private Integer employeeId;
     @JsonView({View.UserView.class})
     private Employees employeesByEmployeeId;

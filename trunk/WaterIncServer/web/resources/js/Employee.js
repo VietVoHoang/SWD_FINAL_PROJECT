@@ -42,7 +42,6 @@ var loadAllEmployee = function () {
                 '<th>Status</th>' +
                 '<th>Title</th>' +
                 '<th>Day Off</th>' +
-
                 '<th>Bonus day</th>' +
                 '<th>Hour off</th>' +
                 '<th>Bonus hour</th>' +
@@ -65,7 +64,6 @@ var loadAllEmployee = function () {
                     + '<td>' + status + '</td>'
                     + '<td>' + data[i].titleName + '</td>'
                     + '<td>' + data[i].dayOff + '</td>'
-
                     + '<td>' + data[i].bonusDay + '</td>'
                     + '<td>' + data[i].hourOff + '</td>'
                     + '<td>' + data[i].bonusHour + '</td>'

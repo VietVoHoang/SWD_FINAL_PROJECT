@@ -113,7 +113,7 @@
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="#" onclick="loadAllUser()">
                         <i class="fa fa-user-secret"></i>
                         <span>Manage User</span>
                         <span class="pull-right-container">
@@ -393,8 +393,7 @@
                     </div>
                     <div class="form-group">
                         <label for="newOrderCusPhone">Password</label>
-                        <input type="text" class="form-control" id="newUserPassword" placeholder="Password"
-                               name="password">
+                        <input type="password" class="form-control" id="newUserPassword" placeholder="Password" name="password">
                     </div>
                     <div class="form-group">
                         <label for="UserRole">User role</label>
@@ -469,18 +468,7 @@
 <script src="resources/js/Order.js"></script>
 <script src="resources/js/Product.js"></script>
 <script src="resources/js/Employee.js"></script>
-<!-- User -->
 <script src="resources/js/User.js"></script>
-<script>
-    loadAllOrder();
-    $('#newOrderCreateDate').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true,
-        immediateUpdates: true,
-        startDate: moment(new Date().getTime()).format("YYYY-MM-DD")
-    })
-</script>
 </body>
 
 </html>
