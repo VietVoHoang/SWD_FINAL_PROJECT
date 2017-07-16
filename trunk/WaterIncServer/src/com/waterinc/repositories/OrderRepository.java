@@ -1,5 +1,6 @@
 package com.waterinc.repositories;
 
+import com.waterinc.model.Orderitems;
 import com.waterinc.model.Orders;
 import org.springframework.data.repository.CrudRepository;
 
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface OrderRepository extends CrudRepository<Orders, Integer> {
     List<Orders> findAll();
+
+    List<Orders> findAllByOrderStatus(int status);
 }

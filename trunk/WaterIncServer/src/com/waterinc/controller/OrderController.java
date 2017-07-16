@@ -49,7 +49,7 @@ public class OrderController {
     public List findAllOrderNotDelivered() {
         List<Orders> result = new ArrayList<>();
         try {
-//            result = orderRepository.findAllByOrderStatus(2);
+            result = orderRepository.findAllByOrderStatus(2);
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         }
