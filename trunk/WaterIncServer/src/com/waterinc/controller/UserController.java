@@ -19,6 +19,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @JsonView({View.UserView.class})
     @RequestMapping(value = "findAllUser", method = RequestMethod.GET)
     public List<Users> getAllUser() {
         List<Users> result = userRepository.findAll();
@@ -26,32 +27,38 @@ public class UserController {
         return result;
     }
 
+    @JsonView({View.UserView.class})
     @RequestMapping(value = "addUser", method = RequestMethod.POST)
-    public Users addUser(String userName, String password, int enable, String role) {
+    public List<Users> addUser(String username, String password, int enable, String role, int empId) {
         Users user = new Users();
-        user.setUsername(userName);
+        user.setUsername(username);
         user.setPassword(password);
         user.setEnable(enable);
         user.setRole(role);
-        return userRepository.save(user);
+        user.setEmployeeId(empId);
+        userRepository.save(user);
+        return getAllUser();
     }
 
     @RequestMapping(value = "updateUser", method = RequestMethod.POST)
-    public Users updateUser(int id, String userName, String password, int enable, String role) {
+    public Users updateUser(int id, String userName, String password, int enable, String role, int empId) {
         Users user = userRepository.findOne(id);
         user.setUsername(userName);
         user.setPassword(password);
         user.setEnable(enable);
         user.setRole(role);
+        user.setEmployeeId(empId);
         return userRepository.save(user);
     }
 
+    @JsonView({View.UserView.class})
     @RequestMapping(value = "removeUser", method = RequestMethod.POST)
-    public void removeUser(int id) {
+    public List<Users> removeUser(int id) {
         Users user = userRepository.findOne(id);
-        if(user != null) {
+        if (user != null) {
             user.setEnable(0);
         }
         userRepository.save(user);
+        return getAllUser();
     }
 }

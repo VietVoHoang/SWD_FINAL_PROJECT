@@ -11,10 +11,10 @@ import java.util.Collection;
  */
 @Entity
 public class Employees {
-    @JsonView(View.EmployeeView.class)
+    @JsonView({View.EmployeeView.class,View.UserView.class})
     private Integer id;
 
-    @JsonView(View.EmployeeView.class)
+    @JsonView({View.EmployeeView.class,View.UserView.class})
     private String name;
 
     @JsonView(View.EmployeeView.class)
@@ -26,7 +26,7 @@ public class Employees {
     @JsonView(View.EmployeeView.class)
     private Double baseSalary;
 
-    @JsonView(View.EmployeeView.class)
+    @JsonView({View.EmployeeView.class,View.UserView.class})
     private String titleName;
 
     @JsonView(View.EmployeeView.class)
