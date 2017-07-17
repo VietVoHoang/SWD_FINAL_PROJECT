@@ -34,8 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll().anyRequest()
-//                .authenticated().and().formLogin().and().csrf().disable();
+//        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll()
+//                .antMatchers("login.jsp").permitAll()
+//                .antMatchers("/login").permitAll()
+//                .anyRequest().authenticated().and().formLogin().loginPage("/login.jsp").permitAll().and().csrf().disable();
         http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
     }
 

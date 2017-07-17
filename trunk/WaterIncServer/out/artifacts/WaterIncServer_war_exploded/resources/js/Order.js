@@ -9,7 +9,18 @@ var loadAllOrder = function () {
         success: function (data) {
             var noNewOrder = 0;
             var table = $('#tableArea');
+
             $('#addNewDiv').remove();
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableAreaBonus")) {
+                $('#tableAreaBonus').DataTable().clear().destroy();
+            }
+            /**/
             table.empty();
             table.append('<thead>' +
                 '<tr style="background-color: #00a65a; color: #FFF">' +

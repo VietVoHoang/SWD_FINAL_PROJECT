@@ -3,12 +3,23 @@
  */
 
 var loadAllProduct = function () {
+    $('#tableAreaBonus').hide();
     $.ajax({
         url: '/findAllProduct',
         method: 'GET',
         success: function (data) {
             console.log(data);
             var table = $('#tableArea');
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableAreaBonus")) {
+                $('#tableAreaBonus').DataTable().clear().destroy();
+            }
+            /**/
             table.empty();
             table.append('<thead>' +
                 '<tr style="background-color: #00a65a; color: #FFF">' +
@@ -90,7 +101,7 @@ var updateAppendModal = function (id) {
         '</div>' +
         '<div class="form-group">' +
         '<label for="updateProductname">Name</label>' +
-        '<input type="text" name="productName" class="form-control" id="updateProductname" placeholder="Name"/>' +//dm s h lai update dc
+        '<input type="text" name="productName" class="form-control" id="updateProductname" placeholder="Name"/>' +
         '</div>' +
         '<div class="form-group">' +
         '<label for="updateProductQuantity">Quantity</label>' +

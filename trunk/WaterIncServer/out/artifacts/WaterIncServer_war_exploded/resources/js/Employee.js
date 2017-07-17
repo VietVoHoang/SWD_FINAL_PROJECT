@@ -9,6 +9,7 @@ var calculateSalary = function (baseSalary, bonusDay, dayOff, hourOff, bonusHour
 };
 
 var loadAllEmployee = function () {
+    $('#tableAreaBonus').hide();
     $.ajax({
         url: '/getAllSalary',
         method: 'GET',
@@ -35,6 +36,16 @@ var loadAllEmployee = function () {
         success: function (data) {
             console.log(data);
             var table = $('#tableArea');
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableAreaBonus")) {
+                $('#tableAreaBonus').DataTable().clear().destroy();
+            }
+            /**/
             table.empty();
             table.append('<thead>' +
                 '<tr style="background-color: #00a65a; color: #FFF">' +

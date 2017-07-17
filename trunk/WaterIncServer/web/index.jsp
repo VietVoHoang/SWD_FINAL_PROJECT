@@ -136,6 +136,15 @@
                             </span>
                     </a>
                 </li>
+                <li class="treeview">
+                    <a href="#" onclick="loadAllSalaryAndBonuscoefficient()">
+                        <i class="fa fa-cubes"></i>
+                        <span>Manage Salary</span>
+                        <span class="pull-right-container">
+                                <span class="pull-right-container"></span>
+                            </span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -191,6 +200,21 @@
                                 <tr>
                                     <td id="status"></td>
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- table -->
+                        <table class="w3-table-all w3-hoverable" id="tableAreaBonus">
+                            <thead>
+                            <tr style="background-color: #00a65a; color: #FFF">
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody id="bonusData">
+                            <tr>
+                                <td id="bonus"></td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -469,6 +493,7 @@
 <script src="resources/js/Product.js"></script>
 <script src="resources/js/Employee.js"></script>
 <script src="resources/js/User.js"></script>
+<script src="resources/js/SalaryAndBonuscoefficient.js"></script>
 </body>
 
 </html>

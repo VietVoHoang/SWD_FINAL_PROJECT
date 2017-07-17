@@ -1,12 +1,23 @@
 /**
  * Created by Asus on 7/14/2017.
  */
+
 var loadAllUser = function () {
     $.ajax({
         url: '/findAllUser',
         method: 'GET',
         success: function (data) {
             var table = $('#tableArea');
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableAreaBonus")) {
+                $('#tableAreaBonus').DataTable().clear().destroy();
+            }
+            /**/
             $('#addNewDiv').remove();
             table.empty();
             table.append('<thead>' +
