@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                     orderItem.productId = json_data.getInt("productId");
                     orderItem.quantity = json_data.getInt("itemQuantity");
                     orderItem.productName = findProductNameById(json_data.getInt("productId"));
-                    orderItem.total = findProductPriceById(json_data.getInt("productId") * json_data.getInt("itemQuantity")) * 1.0;
+                    orderItem.total = findProductPriceById(json_data.getInt("productId")) * json_data.getInt("itemQuantity") * 1.0;
                     orderItems.add(orderItem);
                 }
                 listOrderItem = new ListOrderItem(MainActivity.this, orderItems);

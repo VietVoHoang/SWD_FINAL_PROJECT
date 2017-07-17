@@ -6,15 +6,15 @@ package com.example.administrator.naomiforemployee.stuff;
 
 public class Url {
     public static final String findAllOrder =
-            "http://6636dc2b.ngrok.io/findAllOrderNotDelivered";
+            "http://ced1b57d.ngrok.io/findAllOrderNotDelivered";
 
     public static final String findOrderItemByOrderId =
-            "http://6636dc2b.ngrok.io/getOrderItemByOrderId";
+            "http://ced1b57d.ngrok.io/getOrderItemByOrderId";
 
     public static final String UpdateOrderList =
-            "http://6636dc2b.ngrok.io/UpdateStatusOrderDelivered";
+            "http://ced1b57d.ngrok.io/UpdateStatusOrderDelivered";
 
     //Call api "findAllProduct" from server to list all product on android app
     public static final String findAllProduct =
-            "http://6636dc2b.ngrok.io/findAllProduct";
+            "http://ced1b57d.ngrok.io/findAllProduct";
 }

@@ -51,7 +51,7 @@ public class ViewOrder extends AppCompatActivity {
 
     public ArrayList<OrderItem> orderItems = new ArrayList<>();
     public int orderId;
-    public int realQuantity = 1, status = 0, empId = 1;
+    public int realQuantity = 1, status = 0, empId = 4;
     Bundle bundle;
     private boolean flag = true;
     private double price = 0, total = 0, finalTotal = 0;
@@ -221,6 +221,9 @@ public class ViewOrder extends AppCompatActivity {
                     public void onClick(View v) {
                         txtTotalProduct.setText(total + "");
                         txtQuantity.setText(realQuantity + "");
+                        OrderItem orderItem = mAdapter.getItem(position);
+                        orderItem.setQuantity(realQuantity);
+                        orderItem.setTotal(total);
                         dialog.dismiss();
                     }
                 });
