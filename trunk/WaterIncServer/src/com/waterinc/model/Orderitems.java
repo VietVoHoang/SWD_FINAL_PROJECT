@@ -1,5 +1,8 @@
 package com.waterinc.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.view.View;
+
 import javax.persistence.*;
 
 /**
@@ -8,9 +11,13 @@ import javax.persistence.*;
 @Entity
 public class Orderitems {
     private Integer id;
+    @JsonView({View.OrderItemView.class})
     private Integer itemQuantity;
+    @JsonView({View.OrderItemView.class})
     private Integer productId;
+    @JsonView(View.OrderItemView.class)
     private Integer orderId;
+    @JsonView(View.OrderItemView.class)
     private Products productsByProductId;
     private Orders ordersByOrderId;
 

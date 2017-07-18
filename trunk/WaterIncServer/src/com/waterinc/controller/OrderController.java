@@ -1,22 +1,24 @@
 package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.waterinc.model.Orderitems;
 import com.waterinc.model.Orders;
+import com.waterinc.repositories.OrderItemRepository;
 import com.waterinc.repositories.OrderRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by hongducphan on 7/3/17.
@@ -26,6 +28,9 @@ import java.util.Map;
 public class OrderController {
     @Autowired
     OrderRepository orderRepository;
+
+    @Autowired
+    OrderItemRepository orderItemRepository;
 
     @JsonView(View.OrderView.class)
     @RequestMapping(value = "findAllOrder", method = RequestMethod.GET)
@@ -37,11 +42,13 @@ public class OrderController {
             System.out.println("Exception: " + e);
         }
         Collections.reverse(result);
-        System.out.println(result.size());
-        for (int i = 0; i < result.size(); i++) {
-            System.out.println(result.get(i).getCustomerName());
-        }
         return result;
+    }
+
+    @JsonView(View.OrderView.class)
+    @RequestMapping(value = "findOrderById", method = RequestMethod.POST)
+    public Orders findOrderById(int id) {
+        return orderRepository.findOne(id);
     }
 
     @JsonView(View.OrderView.class)
@@ -55,6 +62,17 @@ public class OrderController {
         }
         return result;
     }
+
+    @JsonView(View.OrderView.class)
+    @RequestMapping(value = "UpdateStatusOrderDelivered", method = RequestMethod.POST)
+    public List UpdateOrderStatusMobile(int orderId, int status) {
+        System.out.println(orderId + " - " + status);
+        Orders result = orderRepository.findOne(orderId);
+        result.setOrderStatus(status);
+        orderRepository.save(result);
+        return findAllOrderNotDelivered();
+    }
+
 
     @RequestMapping(value = "addOrder", method = RequestMethod.POST)
     public Orders addNewOrder(Timestamp createDate,
@@ -76,48 +94,48 @@ public class OrderController {
     }
 
     @RequestMapping(value = "addOrderMobile", method = RequestMethod.POST)
-    public int addNewOrderTest(String json) {
-        ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> map = null;
-        try {
-            map = mapper.readValue(json, Map.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(map);
+    public ResponseEntity<Integer> addNewOrderTest(Timestamp createDate,
+                                                   double total,
+                                                   int status,
+                                                   String cusName,
+                                                   String cusPhone,
+                                                   String cusAddress, int empId) {
+        System.out.println(createDate + " - " + total + " - " + status + " - " + cusName + " - " + cusPhone + " - " + cusAddress + " - " + total + " - " + empId);
         Orders order = new Orders();
-        Timestamp ts = Timestamp.valueOf((String) map.get("createDate"));
-        order.setOrderCreateDate(ts);
-        order.setOrderTotal(((Integer) map.get("total")) * 1.0);
-        order.setOrderStatus((Integer) map.get("status"));
-        order.setCustomerName((String) map.get("cusName"));
-        order.setCustomerAddress((String) map.get("cusAddress"));
-        order.setCustomerPhone((String) map.get("cusPhone"));
-        return orderRepository.save(order).getId();
-//        return orderRepository.save(order);
-    }
-
-    @RequestMapping(value = "updateOrder", method = RequestMethod.POST)
-    public Orders updateOrder(int id, Timestamp createDate, double total, int status) {
-        Orders order = orderRepository.findOne(id);
         order.setOrderCreateDate(createDate);
         order.setOrderTotal(total);
         order.setOrderStatus(status);
+        order.setCustomerName(cusName);
+        order.setCustomerAddress(cusAddress);
+        order.setCustomerPhone(cusPhone);
+        order.setEmployeeId(empId);
+        return new ResponseEntity(orderRepository.save(order), HttpStatus.OK);
+    }
+
+    @JsonView(View.OrderView.class)
+    @RequestMapping(value = "updateOrder", method = RequestMethod.POST)
+    public Orders updateOrder(int id, double total, int status) {
+        System.out.println(id + " - " + total + " - " + status);
+        Orders order = orderRepository.findOne(id);
+        order.setOrderTotal(total);
+        order.setOrderStatus(status);
+        System.out.println(order);
         return orderRepository.save(order);
     }
 
+
+    @JsonView(View.OrderView.class)
     @RequestMapping(value = "removeOrder", method = RequestMethod.POST)
-    public void removeOrder(int id) {
+    @Transactional
+    public List<Orders> removeOrder(int id) {
+        List<Orderitems> list = orderItemRepository.findAllByOrderId(id);
+        for (Orderitems o : list) {
+            orderItemRepository.delete(o);
+        }
         Orders order = orderRepository.findOne(id);
-        if (order != null) {
+        if (order != null && order.getOrderStatus() == 0) {
             orderRepository.delete(order);
         }
+        return findAllOrder();
     }
-
-//    @JsonView(View.ProductView.class)
-//    @RequestMapping(value = "searchProductByName", method = RequestMethod.POST)
-//    public List<Product> searchProductByName(String searchValue) {
-//        List<Product> productList = new ArrayList<>();
-//        return productList;
-//    }
 }

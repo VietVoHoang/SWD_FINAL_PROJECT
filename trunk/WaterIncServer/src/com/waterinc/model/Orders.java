@@ -24,7 +24,9 @@ public class Orders {
     private String customerName;
     @JsonView({View.OrderView.class})
     private String customerPhone;
+    @JsonView({View.OrderView.class})
     private String customerAddress;
+    @JsonView({View.OrderView.class})
     private Integer employeeId;
     private Collection<Orderitems> orderitemsById;
     private Employees employeesByEmployeeId;

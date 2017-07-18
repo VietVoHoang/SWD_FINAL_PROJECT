@@ -14,3 +14,15 @@ h3 {
 #addNewDiv {
     margin-left: 14px;
 }
+
+/* fix modal too long*/
+.modal-dialog {
+    overflow-y: initial !important
+}
+
+.modal-body {
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+/**/

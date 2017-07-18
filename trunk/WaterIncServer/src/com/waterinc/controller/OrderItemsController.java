@@ -43,14 +43,35 @@ public class OrderItemsController {
         return orderItemRepository.findAllByOrderId((Integer) map.get("orderId"));
     }
 
-    @JsonView({View.OrderView.class, View.OrderItemView.class})
+    @JsonView(View.OrderItemView.class)
     @RequestMapping(value = "addOrderItem", method = RequestMethod.POST)
     public List<Orderitems> addOrderItem(int orderId, int productId, int quantity) {
+        System.out.println("addOrderItem:" + orderId + " - " + productId + " - " + quantity);
+        List<Orderitems> list = getOrderItemByOrderId(orderId);
+        for (Orderitems orderitems : list) {
+            if (orderitems.getProductId() == productId) {
+                int quan = orderitems.getItemQuantity() + quantity;
+                orderitems.setItemQuantity(quan);
+                orderItemRepository.save(orderitems);
+                return getOrderItemByOrderId(orderId);
+            }
+        }
         Orderitems o = new Orderitems();
-        o.setItemQuantity(quantity);
-        o.setOrderId(orderId);
         o.setProductId(productId);
+        o.setOrderId(orderId);
+        o.setItemQuantity(quantity);
         orderItemRepository.save(o);
         return getOrderItemByOrderId(orderId);
+    }
+
+    @RequestMapping(value = "updateOrderItemByOrderIdAndProductId", method = RequestMethod.POST)
+    public void updateOrderItemByOrderIdAndProductId(int orderId, int productId, int newQuantity) {
+        List<Orderitems> list = orderItemRepository.findAllByOrderId(orderId);
+        for (Orderitems o : list) {
+            if (o.getProductId() == productId) {
+                o.setItemQuantity(newQuantity);
+                orderItemRepository.save(o);
+            }
+        }
     }
 }
