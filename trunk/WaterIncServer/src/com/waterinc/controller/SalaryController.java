@@ -1,6 +1,7 @@
 package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.model.Bonuscoefficient;
 import com.waterinc.model.Products;
 import com.waterinc.model.Salary;
 import com.waterinc.repositories.ProductRepository;
@@ -41,5 +42,11 @@ public class SalaryController {
         salary.setSalaryByHour(salaryByHour);
         salaryRepository.save(salary);
         return findAllSalary();
+    }
+
+    @JsonView({View.SalaryView.class})
+    @RequestMapping(value = "findSalaryById", method = RequestMethod.POST)
+    public Salary findBonusById(int id) {
+        return salaryRepository.findOne(id);
     }
 }

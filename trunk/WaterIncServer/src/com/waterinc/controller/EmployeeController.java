@@ -2,6 +2,7 @@ package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.waterinc.model.Employees;
+import com.waterinc.model.Users;
 import com.waterinc.repositories.EmployeeRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,5 +75,11 @@ public class EmployeeController {
         }
         employeeRepository.save(employee);
         return getAllEmployee();
+    }
+
+    @JsonView({View.EmployeeView.class})
+    @RequestMapping(value = "findEmpById", method = RequestMethod.POST)
+    public Employees findEmpById(int id) {
+        return  employeeRepository.findOne(id);
     }
 }

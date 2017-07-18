@@ -78,7 +78,7 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="#" class="btn btn-default btn-flat" onclick="logout()">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -185,7 +185,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <h3>Product List</h3>
+                        <h3 id="pageTitle"></h3>
                     </div>
                     <!-- ./col -->
                     <div class="col-md-12">

@@ -6,11 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="resources/js/bootstrap-notify.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -36,11 +39,7 @@
                         <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
                     </div>
                     <div class="input-group">
-                        <div class="checkbox">
-                            <label>
-                                <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                            </label>
-                        </div>
+                        <p id="error"></p>
                     </div>
                     <div style="margin-top:10px" class="form-group">
                         <!-- Button -->
@@ -59,6 +58,34 @@
     </div>
 
 </div>
+
+<script>
+
+    $(function () {
+        console.log("cccc");
+            var error = getUrlParameter("error");
+            console.log(error);
+            if(error) {
+                $('#error').text('Invalid username or password').css("color", "red");
+            }
+    });
+
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+</script>
 
 </body>
 </html>

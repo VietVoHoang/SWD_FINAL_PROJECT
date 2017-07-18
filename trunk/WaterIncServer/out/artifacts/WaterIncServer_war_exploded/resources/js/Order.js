@@ -3,6 +3,8 @@
  */
 
 var loadAllOrder = function () {
+    $('#pageTitle').text("Order List");
+    $('#tableAreaBonus').hide();
     listOrderItem = [];
     $.ajax({
         url: '/findAllOrder',
@@ -13,6 +15,11 @@ var loadAllOrder = function () {
             /* reset table to reinitialize */
             if ($.fn.DataTable.isDataTable("#tableArea")) {
                 $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableAreaBonus")) {
+                $('#tableAreaBonus').DataTable().clear().destroy();
             }
             /**/
             $('#addNewDiv').remove();
@@ -178,7 +185,7 @@ var appendUpdateModal = function (id) {
         '<form id="addOrderForm">' +
         '<div class="modal-header">' +
         '<button type="button" class="close" data-dismiss="modal" onclick="closeDeleteModal(\'#updateOrderModal' + id + '\')">&times;</button>' +
-        '<h4 class="modal-title">New Order</h4>' +
+        '<h4 class="modal-title">Update Order</h4>' +
         '</div>' +
         '<div class="modal-body">' +
         '<div class="form-group" style="display: none">' +

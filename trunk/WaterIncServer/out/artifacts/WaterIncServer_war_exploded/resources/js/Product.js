@@ -3,6 +3,7 @@
  */
 
 var loadAllProduct = function () {
+    $('#pageTitle').text("Product List");
     $('#tableAreaBonus').hide();
     $.ajax({
         url: '/findAllProduct',
@@ -128,6 +129,16 @@ var updateAppendModal = function (id) {
         '</div>' +
         '</div>');
     $('body').append(updateModal);
+    $.ajax({
+        url: "/findProductById",
+        method: "POST",
+        data: {"id": id},
+        success: function (data) {
+            $('#updateProductname').val(data.productName);
+            $('#updateProductQuantity').val(data.productQuantity);
+            $('#updateProductPrice').val(data.productPrice);
+        }
+    });
 };
 
 var closeUpdateModal = function (modalId) {

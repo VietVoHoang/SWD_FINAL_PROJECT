@@ -5,11 +5,16 @@ import com.waterinc.model.Users;
 import com.waterinc.repositories.UserRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -64,5 +69,26 @@ public class UserController {
         }
         userRepository.save(user);
         return getAllUser();
+    }
+
+    @JsonView({View.UserView.class})
+    @RequestMapping(value = "findUserById", method = RequestMethod.POST)
+    public Users findUserById(int id) {
+        return userRepository.findOne(id);
+    }
+
+    @JsonView({View.UserView.class})
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public Users login(String username, String password) {
+        return userRepository.findByUsernameAndPassword(username, password);
+    }
+
+    @RequestMapping(value="/logout", method = RequestMethod.GET)
+    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/login.jsp";
     }
 }

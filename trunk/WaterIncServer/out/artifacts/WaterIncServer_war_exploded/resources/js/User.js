@@ -2,7 +2,18 @@
  * Created by Asus on 7/14/2017.
  */
 
+var logout = function () {
+  $.ajax({
+      url: '/logout',
+      method: 'GET',
+      success: function (data) {
+          window.location.href = "/login.jsp";
+      }
+  });
+};
+
 var loadAllUser = function () {
+    $('#pageTitle').text("User List");
     $.ajax({
         url: '/findAllUser',
         method: 'GET',
@@ -261,6 +272,15 @@ var appendUpdateUserModal = function (id) {
                 var option = $('<option value="' + data[i].id + '">' + data[i].name + ' - ' + data[i].titleName + '</option>');
                 selectEmp.append(option);
             }
+        }
+    });
+    $.ajax({
+        url: "/findUserById",
+        method: "POST",
+        data: {"id": id},
+        success: function (data) {
+            $('#updateUserName').val(data.username);
+            $('#updateUserPassword').val(data.password);
         }
     });
 };

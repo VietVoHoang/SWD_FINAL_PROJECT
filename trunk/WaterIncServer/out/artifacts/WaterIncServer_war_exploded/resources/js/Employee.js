@@ -9,6 +9,7 @@ var calculateSalary = function (baseSalary, bonusDay, dayOff, hourOff, bonusHour
 };
 
 var loadAllEmployee = function () {
+    $('#pageTitle').text("Employee List");
     $('#tableAreaBonus').hide();
     $.ajax({
         url: '/getAllSalary',
@@ -181,6 +182,19 @@ var updateEmployeeAppendModal = function (id) {
         '</div>' +
         '</div>');
     $('body').append(updateModal);
+    $.ajax({
+        url: "/findEmpById",
+        method: "POST",
+        data: {"id": id},
+        success: function (data) {
+            $('#updateEmployeeName').val(data.name);
+            $('#updateEmployeeDayOff').val(data.dayOff);
+            $('#updateEmployeeBaseSalary').val(data.baseSalary);
+            $('#updateEmployeeBonusDay').val(data.bonusDay);
+            $('#updateEmployeeHourOff').val(data.hourOff);
+            $('#updateEmployeeBonusHour').val(data.bonusHour);
+        }
+    });
 };
 
 var closeUpdateEmployeeModal = function (modalId) {

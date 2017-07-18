@@ -3,6 +3,7 @@ package com.waterinc.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.waterinc.model.Bonuscoefficient;
 import com.waterinc.model.Salary;
+import com.waterinc.model.Users;
 import com.waterinc.repositories.BonuscoefficientRepository;
 import com.waterinc.repositories.SalaryRepository;
 import com.waterinc.view.View;
@@ -39,5 +40,11 @@ public class BonuscoefficientController {
         bonuscoefficient.setCoefficientByHour(coefficientByHour);
         bonuscoefficientRepository.save(bonuscoefficient);
         return findAllBonuscoefficient();
+    }
+
+    @JsonView({View.BonuscoefficientView.class})
+    @RequestMapping(value = "findBonusById", method = RequestMethod.POST)
+    public Bonuscoefficient findBonusById(int id) {
+        return bonuscoefficientRepository.findOne(id);
     }
 }

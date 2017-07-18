@@ -5,6 +5,7 @@
 $('#tableAreaBonus').hide();
 
 var loadAllSalaryAndBonuscoefficient = function () {
+    $('#pageTitle').text("Salary List");
     $('#tableAreaBonus').show();
     $.ajax({
         url: '/getAllSalary',
@@ -130,6 +131,15 @@ var updateBonusAppendModal = function (id) {
         '</div>' +
         '</div>');
     $('body').append(updateModal);
+    $.ajax({
+        url: "/findBonusById",
+        method: "POST",
+        data: {"id": id},
+        success: function (data) {
+            $('#updateCoefficientByDay').val(data.coefficientByDay);
+            $('#updateCoefficientByHour').val(data.coefficientByHour);
+        }
+    });
 };
 
 var updateSalary = function (id, modalId) {
@@ -139,7 +149,7 @@ var updateSalary = function (id, modalId) {
         data: $('#updateSalaryForm').serialize(),
         success: function (data) {
             console.log(data);
-            var table = $('#tableAreaBonus');
+            var table = $('#tableArea');
             table.empty();
 
             table.append('<thead>' +
@@ -195,6 +205,15 @@ var updateSalaryAppendModal = function (id) {
         '</div>' +
         '</div>');
     $('body').append(updateModal);
+    $.ajax({
+        url: "/findSalaryById",
+        method: "POST",
+        data: {"id": id},
+        success: function (data) {
+            $('#updateSalaryByDay').val(data.salaryByDay);
+            $('#updateSalaryByHour').val(data.salaryByHour);
+        }
+    });
 };
 
 var closeUpdateModal = function (modalId) {

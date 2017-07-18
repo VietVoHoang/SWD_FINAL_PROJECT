@@ -34,11 +34,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll()
+        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers("/login.jsp").permitAll()
 //                .antMatchers("login.jsp").permitAll()
-//                .antMatchers("/login").permitAll()
-//                .anyRequest().authenticated().and().formLogin().loginPage("/login.jsp").permitAll().and().csrf().disable();
-        http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
+                .antMatchers("/login").permitAll()
+                .anyRequest().authenticated().and().formLogin().loginPage("/login.jsp").loginProcessingUrl("/login").defaultSuccessUrl("/index.jsp", true).failureUrl("/login.jsp?error=true").and().csrf().disable();
+//        http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
     }
 
 }

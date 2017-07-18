@@ -2,6 +2,7 @@ package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.waterinc.model.Products;
+import com.waterinc.model.Users;
 import com.waterinc.repositories.ProductRepository;
 import com.waterinc.view.View;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,5 +71,11 @@ public class ProductController {
     public List<Products> searchProductByName(String searchValue) {
         List<Products> productList = new ArrayList<>();
         return productList;
+    }
+
+    @JsonView({View.ProductView.class})
+    @RequestMapping(value = "findProductById", method = RequestMethod.POST)
+    public Products findProductById(int id) {
+        return productRepository.findOne(id);
     }
 }
