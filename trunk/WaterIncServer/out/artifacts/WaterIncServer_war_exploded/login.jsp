@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="resources/js/bootstrap-notify.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -62,12 +61,11 @@
 <script>
 
     $(function () {
-        console.log("cccc");
-            var error = getUrlParameter("error");
-            console.log(error);
-            if(error) {
-                $('#error').text('Invalid username or password').css("color", "red");
-            }
+        var error = getUrlParameter("error");
+        console.log(error);
+        if(error) {
+            $('#error').text('Invalid username or password').css("color", "red");
+        }
     });
 
 

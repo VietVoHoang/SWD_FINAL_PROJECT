@@ -135,9 +135,21 @@ var disableUder = function (id, modalId) {
                 tbody.append(row);
             }
             $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addUserModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;' +
+                '">Add new user&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
-    closeDeleteModal(modalId)
+    closeDeleteModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Disable successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var addNewUser = function () {
@@ -169,7 +181,19 @@ var addNewUser = function () {
                 tbody.append(row);
             }
             $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addUserModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;' +
+                '">Add new user&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
+    });
+    //alert success
+    $.bootstrapGrowl('Create successful!',{
+        type: 'success',
+        delay: 2000,
     });
 };
 
@@ -226,6 +250,11 @@ var updateUser = function (id, modalId) {
         }
     });
     closeUpdateModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Update successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 

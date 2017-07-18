@@ -1,6 +1,6 @@
 li:hover {
     background-color: #01579B;
-
+    animation: 0.3s;
 }
 
 * {
@@ -9,6 +9,10 @@ li:hover {
 
 h3 {
     font-family: 'Montserrat', sans-serif;
+}
+
+a:hover {
+    text-decoration: none !important;
 }
 
 #addNewDiv {

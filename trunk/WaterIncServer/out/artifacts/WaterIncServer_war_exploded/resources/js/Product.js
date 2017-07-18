@@ -56,7 +56,6 @@ var loadAllProduct = function () {
                 '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
                 'background-color: #5084be;' +
                 'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
-            table.prev().remove();
             table.prev().after(div);
         }
     })
@@ -151,6 +150,11 @@ var updateProduct = function (id, modalId) {
         method: 'POST',
         data: $('#updateProductForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -169,9 +173,21 @@ var updateProduct = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
     closeUpdateModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Update successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var removeProduct = function (id, modalId) {
@@ -182,6 +198,11 @@ var removeProduct = function (id, modalId) {
             "id": id
         },
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -200,9 +221,21 @@ var removeProduct = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
     closeDeleteModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Delete successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var createProduct = function () {
@@ -211,6 +244,11 @@ var createProduct = function () {
         method: 'POST',
         data: $('#addProductForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -229,6 +267,18 @@ var createProduct = function () {
                 row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
+    });
+    //alert success
+    $.bootstrapGrowl('Create successful!',{
+        type: 'success',
+        delay: 2000,
     });
 };

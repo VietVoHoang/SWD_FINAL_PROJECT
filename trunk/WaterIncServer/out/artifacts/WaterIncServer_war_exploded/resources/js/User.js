@@ -112,6 +112,11 @@ var disableUder = function (id, modalId) {
             'id': id,
         },
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -129,9 +134,22 @@ var disableUder = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="testAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addUserModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;' +
+                '">Add new user&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
-    closeDeleteModal(modalId)
+    closeDeleteModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Disable successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var addNewUser = function () {
@@ -140,6 +158,11 @@ var addNewUser = function () {
         method: "POST",
         data: $('#addUserForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -157,7 +180,20 @@ var addNewUser = function () {
                 row.append('<td><button class="btn btn-default" onclick="appendDeleteUserModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addUserModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;' +
+                '">Add new user&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
+    });
+    //alert success
+    $.bootstrapGrowl('Create successful!',{
+        type: 'success',
+        delay: 2000,
     });
 };
 
@@ -167,6 +203,11 @@ var updateUser = function (id, modalId) {
         method: 'POST',
         data: $('#updateUserForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var table = $('#tableArea');
             $('#addNewDiv').remove();
             table.empty();
@@ -209,6 +250,11 @@ var updateUser = function (id, modalId) {
         }
     });
     closeUpdateModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Update successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 

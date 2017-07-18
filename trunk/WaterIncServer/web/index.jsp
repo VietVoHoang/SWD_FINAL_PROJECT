@@ -417,8 +417,11 @@
                         <input type="number" name="baseSalary" class="form-control" id="newBaseSalary" placeholder="Base salary">
                     </div>
                     <div class="form-group">
-                        <label for="newTitleName">Title</label>
-                        <input type="text" name="titleName" class="form-control" id="newTitleName" placeholder="Title">
+                    <label for="updateEmployeeStatus">Title</label>
+                    <select class="form-control" id="updateEmployeeStatus" name="titleName">
+                        <option value="Manager">Manager</option>
+                        <option value="Driver">Driver</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -489,12 +492,11 @@
 <!--<script src="js/jquery-3.1.1.min.js"></script>-->
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    /*$.widget.bridge('uibutton', $.ui.button);*/
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+<!-- popup alert -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="resources/plugins/morris/morris.min.js"></script>

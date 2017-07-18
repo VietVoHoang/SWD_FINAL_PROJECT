@@ -122,9 +122,21 @@ var deleteOrder = function (id, modalId) {
             $('#tableArea').DataTable({
                 "aaSorting": []
             });
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addOrderModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;' +
+                '">Add new order&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
     closeDeleteModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Delete successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var reloadOrderData = function () {
@@ -182,9 +194,13 @@ var addNewOrder = function () {
             saveOrderItemToDB(data.id);
             reloadOrderData();
         }
-    })
-
-}
+    });
+    //alert success
+    $.bootstrapGrowl('Add successful!',{
+        type: 'success',
+        delay: 2000,
+    });
+};
 
 var appendUpdateModal = function (id) {
     var updateModal = $('<div id="updateOrderModal' + id + '" class="modal fade in" role="dialog" style="display: block;">' +
@@ -319,5 +335,10 @@ var updateOrder = function (id) {
             reloadOrderData();
 
         }
-    })
+    });
+    //alert success
+    $.bootstrapGrowl('Update successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };

@@ -56,7 +56,6 @@ var loadAllProduct = function () {
                 '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
                 'background-color: #5084be;' +
                 'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
-            table.prev().remove();
             table.prev().after(div);
         }
     })
@@ -175,9 +174,20 @@ var updateProduct = function (id, modalId) {
                 tbody.append(row);
             }
             $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
     closeUpdateModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Update successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var removeProduct = function (id, modalId) {
@@ -212,9 +222,20 @@ var removeProduct = function (id, modalId) {
                 tbody.append(row);
             }
             $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
     });
     closeDeleteModal(modalId);
+    //alert success
+    $.bootstrapGrowl('Delete successful!',{
+        type: 'success',
+        delay: 2000,
+    });
 };
 
 var createProduct = function () {
@@ -247,6 +268,17 @@ var createProduct = function () {
                 tbody.append(row);
             }
             $('#tableArea').DataTable();
+            var div = $('<div id="addNewDiv" class="col-md-12 dataTables_length" style="' +
+                'text-align: -webkit-right;' +
+                '"><button data-toggle="modal" data-target="#addProductModal" class="btn btn-default" style="' +
+                'background-color: #5084be;' +
+                'color: #fff;">Add new product&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></button></div>');
+            $('#tableArea').prev().after(div);
         }
+    });
+    //alert success
+    $.bootstrapGrowl('Create successful!',{
+        type: 'success',
+        delay: 2000,
     });
 };
