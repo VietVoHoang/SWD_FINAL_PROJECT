@@ -207,6 +207,11 @@ var updateEmployee = function (id, modalId) {
         method: 'POST',
         data: $('#updateEmployeeForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -229,6 +234,7 @@ var updateEmployee = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="deleteEmployeeAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
     closeUpdateEmployeeModal(modalId);
@@ -242,6 +248,11 @@ var removeEmployee = function (id, modalId) {
             "id": id
         },
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -264,6 +275,7 @@ var removeEmployee = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="deleteEmployeeAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
     closeDeleteEmployeeModal(modalId);
@@ -275,6 +287,11 @@ var createEmployee = function () {
         method: 'POST',
         data: $('#addEmployeeForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -297,6 +314,7 @@ var createEmployee = function () {
                 row.append('<td><button class="btn btn-default" onclick="deleteEmployeeAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
 };

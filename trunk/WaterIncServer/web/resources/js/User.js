@@ -112,6 +112,11 @@ var disableUder = function (id, modalId) {
             'id': id,
         },
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -129,6 +134,7 @@ var disableUder = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="testAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
     closeDeleteModal(modalId)
@@ -140,6 +146,11 @@ var addNewUser = function () {
         method: "POST",
         data: $('#addUserForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -157,6 +168,7 @@ var addNewUser = function () {
                 row.append('<td><button class="btn btn-default" onclick="appendDeleteUserModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
 };
@@ -167,6 +179,11 @@ var updateUser = function (id, modalId) {
         method: 'POST',
         data: $('#updateUserForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var table = $('#tableArea');
             $('#addNewDiv').remove();
             table.empty();

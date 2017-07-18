@@ -14,7 +14,7 @@ public class Products {
     @JsonView(View.ProductView.class)
     private Integer id;
 
-    @JsonView(View.ProductView.class)
+    @JsonView({View.ProductView.class, View.OrderItemView.class})
     private String productName;
 
     @JsonView(View.ProductView.class)

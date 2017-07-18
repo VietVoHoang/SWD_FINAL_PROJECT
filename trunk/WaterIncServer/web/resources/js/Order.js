@@ -26,7 +26,6 @@ var loadAllOrder = function () {
             table.empty();
             table.append('<thead>' +
                 '<tr style="background-color: #00a65a; color: #FFF">' +
-                '<th data-field="id">Id</th>' +
                 '<th data-field="cusName">Customer name</th>' +
                 '<th data-field="cusPhone">Customer phone</th>' +
                 '<th data-field="total">Total</th>' +
@@ -42,8 +41,7 @@ var loadAllOrder = function () {
                     noNewOrder = parseInt(noNewOrder) + 1;
                 }
                 var row = $('<tr/>');
-                row.append('<td>' + data[i].id + '</td>'
-                    + '<td>' + data[i].customerName + '</td>'
+                row.append('<td>' + data[i].customerName + '</td>'
                     + '<td>' + data[i].customerPhone + '</td>'
                     + '<td>' + data[i].orderTotal + '</td>'
                     + '<td>' + moment(data[i].orderCreateDate).format("YYYY-MM-DD HH:mm:ss") + '</td>'
@@ -103,21 +101,27 @@ var deleteOrder = function (id, modalId) {
             'id': id,
         },
         success: function (data) {
-            // console.log(data);
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
                 var row = $('<tr/>');
-                row.append('<td>' + data[i].id + '</td>'
-                    + '<td>' + data[i].customerName + '</td>'
+                row.append('<td>' + data[i].customerName + '</td>'
                     + '<td>' + data[i].customerPhone + '</td>'
                     + '<td>' + data[i].orderTotal + '</td>'
                     + '<td>' + moment(data[i].orderCreateDate).format("YYYY-MM-DD HH:mm:ss") + '</td>'
                     + '<td>' + data[i].orderStatus + '</td>');
                 row.append('<td><button class="btn btn-default" onclick="appendUpdateModal(' + data[i].id + ')"><i class="fa fa-pencil"></i></button></td>');
-                row.append('<td><button class="btn btn-default" onclick="testAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="appendDeleteOrderModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable({
+                "aaSorting": []
+            });
         }
     });
     closeDeleteModal(modalId);
@@ -128,7 +132,11 @@ var reloadOrderData = function () {
         url: '/findAllOrder',
         method: 'GET',
         success: function (data) {
-            // console.log(data);
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var noNewOrder = 0;
             var tbody = $('#data');
             tbody.empty();
@@ -137,17 +145,19 @@ var reloadOrderData = function () {
                     noNewOrder = parseInt(noNewOrder) + 1;
                 }
                 var row = $('<tr/>');
-                row.append('<td>' + data[i].id + '</td>'
-                    + '<td>' + data[i].customerName + '</td>'
+                row.append('<td>' + data[i].customerName + '</td>'
                     + '<td>' + data[i].customerPhone + '</td>'
                     + '<td>' + data[i].orderTotal + '</td>'
                     + '<td>' + moment(data[i].orderCreateDate).format("YYYY-MM-DD HH:mm:ss") + '</td>'
                     + '<td>' + data[i].orderStatus + '</td>');
                 row.append('<td><button class="btn btn-default" onclick="appendUpdateModal(' + data[i].id + ')"><i class="fa fa-pencil" ></i></button></td>');
-                row.append('<td><button class="btn btn-default" onclick="testAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
+                row.append('<td><button class="btn btn-default" onclick="appendDeleteOrderModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
-                $('#newOrderAmount').text(noNewOrder);
             }
+            $('#newOrderAmount').text(noNewOrder);
+            $('#tableArea').DataTable({
+                "aaSorting": []
+            });
         }
     });
 }

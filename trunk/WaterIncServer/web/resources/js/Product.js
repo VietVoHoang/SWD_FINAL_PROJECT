@@ -151,6 +151,11 @@ var updateProduct = function (id, modalId) {
         method: 'POST',
         data: $('#updateProductForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -169,6 +174,7 @@ var updateProduct = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
     closeUpdateModal(modalId);
@@ -182,6 +188,11 @@ var removeProduct = function (id, modalId) {
             "id": id
         },
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -200,6 +211,7 @@ var removeProduct = function (id, modalId) {
                 row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
     closeDeleteModal(modalId);
@@ -211,6 +223,11 @@ var createProduct = function () {
         method: 'POST',
         data: $('#addProductForm').serialize(),
         success: function (data) {
+            /* reset table to reinitialize */
+            if ($.fn.DataTable.isDataTable("#tableArea")) {
+                $('#tableArea').DataTable().clear().destroy();
+            }
+            /**/
             var tbody = $('#data');
             tbody.empty();
             for (var i = 0; i < data.length; i++) {
@@ -229,6 +246,7 @@ var createProduct = function () {
                 row.append('<td><button class="btn btn-default" onclick="deleteAppendModal(' + data[i].id + ')"><i class="fa fa-trash"></i></button></td>');
                 tbody.append(row);
             }
+            $('#tableArea').DataTable();
         }
     });
 };

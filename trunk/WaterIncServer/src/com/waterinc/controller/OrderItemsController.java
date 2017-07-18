@@ -27,6 +27,12 @@ public class OrderItemsController {
     @JsonView(View.OrderItemView.class)
     @RequestMapping(value = "getOrderItemByOrderId", method = RequestMethod.POST)
     public List<Orderitems> getOrderItemByOrderId(int id) {
+        System.out.println("test" + id);
+        List<Orderitems> result = orderItemRepository.findAllByOrderIdTest(id);
+        System.out.println("size" + result.size());
+        for (int i = 0; i < result.size(); i++) {
+            System.out.println(result.get(i).getItemQuantity());
+        }
         return orderItemRepository.findAllByOrderId(id);
     }
 
@@ -48,9 +54,10 @@ public class OrderItemsController {
     public List<Orderitems> addOrderItem(int orderId, int productId, int quantity) {
         System.out.println("addOrderItem:" + orderId + " - " + productId + " - " + quantity);
         List<Orderitems> list = getOrderItemByOrderId(orderId);
+
         for (Orderitems orderitems : list) {
             if (orderitems.getProductId() == productId) {
-                int quan = orderitems.getItemQuantity() + quantity;
+                int quan = quantity;
                 orderitems.setItemQuantity(quan);
                 orderItemRepository.save(orderitems);
                 return getOrderItemByOrderId(orderId);

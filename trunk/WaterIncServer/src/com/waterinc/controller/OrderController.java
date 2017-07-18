@@ -57,6 +57,9 @@ public class OrderController {
         List<Orders> result = new ArrayList<>();
         try {
             result = orderRepository.findAllByOrderStatus(2);
+            for (int i = 0; i < result.size(); i++) {
+                System.out.println(result.get(i).getOrderTotal());
+            }
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         }
@@ -128,12 +131,12 @@ public class OrderController {
     @RequestMapping(value = "removeOrder", method = RequestMethod.POST)
     @Transactional
     public List<Orders> removeOrder(int id) {
-        List<Orderitems> list = orderItemRepository.findAllByOrderId(id);
-        for (Orderitems o : list) {
-            orderItemRepository.delete(o);
-        }
         Orders order = orderRepository.findOne(id);
         if (order != null && order.getOrderStatus() == 0) {
+            List<Orderitems> list = orderItemRepository.findAllByOrderId(id);
+            for (Orderitems o : list) {
+                orderItemRepository.delete(o);
+            }
             orderRepository.delete(order);
         }
         return findAllOrder();

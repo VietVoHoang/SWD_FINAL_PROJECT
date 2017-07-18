@@ -36,12 +36,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers("/login.jsp").permitAll()
-                .antMatchers("findAllProduct").permitAll()
-                .antMatchers("UpdateStatusOrderDelivered").permitAll()
-                .antMatchers("getOrderItemByOrderId").permitAll()
-                .antMatchers("findAllOrderNotDelivered").permitAll()
-                .antMatchers("addOrderMobile").permitAll()
-                .antMatchers("addOrderItem").permitAll()
+                .antMatchers(HttpMethod.GET, "/findAllProduct").permitAll()
+                .antMatchers(HttpMethod.POST,"/UpdateStatusOrderDelivered").permitAll()
+                .antMatchers(HttpMethod.POST,"/getOrderItemByOrderId").permitAll()
+                .antMatchers(HttpMethod.GET,"/findAllOrderNotDelivered").permitAll()
+                .antMatchers(HttpMethod.POST,"/addOrderMobile").permitAll()
+                .antMatchers(HttpMethod.POST,"/addOrderItem").permitAll()
                 .antMatchers("login").permitAll()
                 .anyRequest().authenticated().and().formLogin().loginPage("/login.jsp").loginProcessingUrl("/login").defaultSuccessUrl("/index.jsp", true).failureUrl("/login.jsp?error=true").and().csrf().disable();
 //        http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
