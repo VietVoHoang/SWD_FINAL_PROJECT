@@ -522,12 +522,14 @@
 <!-- datatable -->
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
-<script src="resources/js/Order.js"></script>
+
 <script src="resources/js/Product.js"></script>
 <script src="resources/js/Employee.js"></script>
 <script src="resources/js/User.js"></script>
 <script src="resources/js/SalaryAndBonuscoefficient.js"></script>
+<script src="resources/js/Order.js"></script>
 <script src="resources/js/OrderItem.js"></script>
+
 </body>
 
 </html>

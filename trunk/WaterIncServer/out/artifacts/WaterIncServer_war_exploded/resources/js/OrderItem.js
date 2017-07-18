@@ -25,7 +25,7 @@ var viewListOrderItem = function () {
     $('body').append(orderItemPopup);
 };
 
-var loadAllProduct = function (selectId) {
+var loadAllProductForOrder = function (selectId) {
     var selectTag = $(selectId);
     $.ajax({
         url: "/findAllProduct",

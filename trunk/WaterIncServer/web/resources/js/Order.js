@@ -59,7 +59,7 @@ var loadAllOrder = function () {
             table.prev().after(div);
         }
     });
-    loadAllProduct("#newOrderProductList");
+    loadAllProductForOrder("#newOrderProductList");
 };
 
 var appendDeleteOrderModal = function (id) {
@@ -243,7 +243,7 @@ var appendUpdateModal = function (id) {
         '</div>' +
         '</div>');
     $('body').append(updateModal);
-    loadAllProduct('#updateOrderProductList');
+    loadAllProductForOrder('#updateOrderProductList');
     loadOrderItemByOrderId(id, "#cartDataUpdate");
     getOrderByIdUpdate(id);
 };
