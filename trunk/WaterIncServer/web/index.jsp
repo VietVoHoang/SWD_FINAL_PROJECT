@@ -527,6 +527,7 @@
 <script src="resources/js/Employee.js"></script>
 <script src="resources/js/User.js"></script>
 <script src="resources/js/SalaryAndBonuscoefficient.js"></script>
+<script src="resources/js/OrderItem.js"></script>
 </body>
 
 </html>

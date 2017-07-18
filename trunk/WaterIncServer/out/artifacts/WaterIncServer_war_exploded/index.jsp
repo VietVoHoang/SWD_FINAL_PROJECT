@@ -174,7 +174,7 @@
                         <!-- small box -->
                         <div class="small-box bg-green">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3 id="newOrderAmount">150</h3>
 
                                 <p>New Orders</p>
                             </div>
@@ -289,37 +289,70 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <form>
+            <form id="addOrderForm">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">New Order</h4>
                 </div>
                 <div class="modal-body">
+                    <div class="form-group" style="display: none">
+                        <label for="newOrderCusName"></label>
+                        <input type="hidden" class="form-control" id="newOrderEmpId" placeholder="Name" name="empId"
+                               value="1">
+                    </div>
                     <div class="form-group">
                         <label for="newOrderCusName">Customer name</label>
-                        <input type="text" class="form-control" id="newOrderCusName" placeholder="Name">
+                        <input type="text" class="form-control" id="newOrderCusName" placeholder="Name" name="cusName">
                     </div>
                     <div class="form-group">
                         <label for="newOrderCusPhone">Customer Phone</label>
-                        <input type="text" class="form-control" id="newOrderCusPhone" placeholder="Phone">
+                        <input type="text" class="form-control" id="newOrderCusPhone" placeholder="Phone"
+                               name="cusPhone">
                     </div>
                     <div class="form-group">
                         <label for="newOrderCusAddress">Customer Address</label>
-                        <input type="text" class="form-control" id="newOrderCusAddress" placeholder="Address">
+                        <input type="text" class="form-control" id="newOrderCusAddress" placeholder="Address"
+                               name="cusAddress">
                     </div>
                     <div class="form-group">
                         <label for="newOrderCusAddress">Order status</label>
-                        <select class="form-control" id="orderStatus">
-                            <option value="1">1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select class="form-control" id="orderStatus" name="status">
+                            <option value="0">Not confirm</option>
+                            <option value="1">Confirmed</option>
+                            <option value="2">Not delivered</option>
+                            <option value="3">Finished</option>
                         </select>
+                    </div>
+                    <div style="border: 1px solid #cccccc; border-radius: 5px; padding: 7.5px;">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select class="form-control" id="newOrderProductList">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="newOrderProductQuantity" placeholder="0">
+                        </div>
+                        <button type="button" onclick="addOrderItemToList()" class="btn btn-default">Add to cart
+                        </button>
+                    </form>
+                    <table class="table table-responsive table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ProductName</th>
+                            <th>Quantity</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="cartData">
+
+                        </tbody>
+                    </table>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="addNewOrder()">Create</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="addNewOrder()">Create
+                    </button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </form>
@@ -494,6 +527,7 @@
 <script src="resources/js/Employee.js"></script>
 <script src="resources/js/User.js"></script>
 <script src="resources/js/SalaryAndBonuscoefficient.js"></script>
+<script src="resources/js/OrderItem.js"></script>
 </body>
 
 </html>
