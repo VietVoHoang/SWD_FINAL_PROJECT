@@ -3,13 +3,13 @@
  */
 
 var logout = function () {
-  $.ajax({
-      url: '/logout',
-      method: 'GET',
-      success: function (data) {
-          window.location.href = "/login.jsp";
-      }
-  });
+    $.ajax({
+        url: '/logout',
+        method: 'GET',
+        success: function (data) {
+            window.location.href = "/login.jsp";
+        }
+    });
 };
 
 var loadAllUser = function () {
@@ -146,7 +146,7 @@ var disableUder = function (id, modalId) {
     });
     closeDeleteModal(modalId);
     //alert success
-    $.bootstrapGrowl('Disable successful!',{
+    $.bootstrapGrowl('Disable successful!', {
         type: 'success',
         delay: 2000,
     });
@@ -191,7 +191,7 @@ var addNewUser = function () {
         }
     });
     //alert success
-    $.bootstrapGrowl('Create successful!',{
+    $.bootstrapGrowl('Create successful!', {
         type: 'success',
         delay: 2000,
     });
@@ -251,7 +251,7 @@ var updateUser = function (id, modalId) {
     });
     closeUpdateModal(modalId);
     //alert success
-    $.bootstrapGrowl('Update successful!',{
+    $.bootstrapGrowl('Update successful!', {
         type: 'success',
         delay: 2000,
     });
@@ -334,3 +334,20 @@ var appendUpdateUserModal = function (id) {
 var closeUpdateModal = function (modalId) {
     $(modalId).remove();
 };
+
+var showSignedInUser = function () {
+    $.ajax({
+        url: "/findUserByUsername",
+        method: "GET",
+        success: function (data) {
+            $('#topLeftName').text(data.employeesByEmployeeId.name);
+            $('#topRightName').text(data.employeesByEmployeeId.name);
+            $('#dropdownName').text(data.employeesByEmployeeId.name);
+            var role = "Administrator";
+            if (data.role == "ROLE_USER") {
+                role = "User"
+            }
+            $('#dropdownRole').text(role + " since June. 2017");
+        }
+    })
+}();

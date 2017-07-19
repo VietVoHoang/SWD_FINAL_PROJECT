@@ -60,23 +60,23 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="resources/img/male.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Viet Vo Hoang</span>
+                            <span class="hidden-xs" id="topRightName">Viet Vo Hoang</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="resources/img/male.jpg" class="img-circle" alt="User Image">
 
-                                <p>
+                                <p id="dropdownName">
                                     Viet Vo Hoang - Administrator
-                                    <small>Admin since June. 2017</small>
                                 </p>
+                                <span id="dropdownRole" style="color: #000 !important;"><small>Admin since June. 2017</small></span>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
+                                <%--<div class="pull-left">--%>
+                                <%--<a href="#" class="btn btn-default btn-flat">Profile</a>--%>
+                                <%--</div>--%>
                                 <div class="pull-right">
                                     <a href="#" class="btn btn-default btn-flat" onclick="logout()">Sign out</a>
                                 </div>
@@ -97,7 +97,7 @@
                     <img src="resources/img/male.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Viet Vo Hoang</p>
+                    <p id="topLeftName">Viet Vo Hoang</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -192,14 +192,14 @@
                         <!-- table -->
                         <table class="w3-table-all w3-hoverable" id="tableArea">
                             <thead>
-                                <tr style="background-color: #00a65a; color: #FFF">
-                                    <th></th>
-                                </tr>
+                            <tr style="background-color: #00a65a; color: #FFF">
+                                <th></th>
+                            </tr>
                             </thead>
                             <tbody id="data">
-                                <tr>
-                                    <td id="status"></td>
-                                </tr>
+                            <tr>
+                                <td id="status"></td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -324,30 +324,30 @@
                         </select>
                     </div>
                     <div style="border: 1px solid #cccccc; border-radius: 5px; padding: 7.5px;">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <select class="form-control" id="newOrderProductList">
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" id="newOrderProductQuantity" placeholder="0">
-                        </div>
-                        <button type="button" onclick="addOrderItemToList()" class="btn btn-default">Add to cart
-                        </button>
-                    </form>
-                    <table class="table table-responsive table-hover table-striped">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>ProductName</th>
-                            <th>Quantity</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody id="cartData">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <select class="form-control" id="newOrderProductList">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="newOrderProductQuantity" placeholder="0">
+                            </div>
+                            <button type="button" onclick="addOrderItemToList()" class="btn btn-default">Add to cart
+                            </button>
+                        </form>
+                        <table class="table table-responsive table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ProductName</th>
+                                <th>Quantity</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody id="cartData">
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -375,11 +375,13 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="newProductname">Name</label>
-                        <input type="text" name="productName" class="form-control" id="newProductname" placeholder="Name">
+                        <input type="text" name="productName" class="form-control" id="newProductname"
+                               placeholder="Name">
                     </div>
                     <div class="form-group">
                         <label for="newProductQuantity">Quantity</label>
-                        <input type="number" name="quantity" class="form-control" id="newProductQuantity" placeholder="Quantity">
+                        <input type="number" name="quantity" class="form-control" id="newProductQuantity"
+                               placeholder="Quantity">
                     </div>
                     <div class="form-group">
                         <label for="newProductPrice">Price</label>
@@ -387,7 +389,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="createProduct('#addProductModal')">Create</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                            onclick="createProduct('#addProductModal')">Create
+                    </button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </form>
@@ -414,18 +418,21 @@
                     </div>
                     <div class="form-group">
                         <label for="newBaseSalary">Base salary</label>
-                        <input type="number" name="baseSalary" class="form-control" id="newBaseSalary" placeholder="Base salary">
+                        <input type="number" name="baseSalary" class="form-control" id="newBaseSalary"
+                               placeholder="Base salary">
                     </div>
                     <div class="form-group">
-                    <label for="updateEmployeeStatus">Title</label>
-                    <select class="form-control" id="updateEmployeeStatus" name="titleName">
-                        <option value="Manager">Manager</option>
-                        <option value="Driver">Driver</option>
+                        <label for="updateEmployeeStatus">Title</label>
+                        <select class="form-control" id="updateEmployeeStatus" name="titleName">
+                            <option value="Manager">Manager</option>
+                            <option value="Driver">Driver</option>
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="createEmployee('#addEmployeeModal')">Create</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                            onclick="createEmployee('#addEmployeeModal')">Create
+                    </button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </form>
@@ -453,7 +460,8 @@
                     </div>
                     <div class="form-group">
                         <label for="newOrderCusPhone">Password</label>
-                        <input type="password" class="form-control" id="newUserPassword" placeholder="Password" name="password">
+                        <input type="password" class="form-control" id="newUserPassword" placeholder="Password"
+                               name="password">
                     </div>
                     <div class="form-group">
                         <label for="UserRole">User role</label>
@@ -495,7 +503,8 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- popup alert -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
 
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>

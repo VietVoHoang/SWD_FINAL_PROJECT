@@ -186,7 +186,7 @@ var addNewOrder = function () {
             'cusName': $('#newOrderCusName').val(),
             'cusPhone': $('#newOrderCusPhone').val(),
             'cusAddress': $('#newOrderCusAddress').val(),
-            'empId': 1
+            'empId': 4
         },
         // data: $('#addOrderForm').serialize(),
         success: function (data) {

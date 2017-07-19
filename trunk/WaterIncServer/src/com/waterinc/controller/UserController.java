@@ -1,6 +1,7 @@
 package com.waterinc.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.waterinc.config.SecurityUserDetailService;
 import com.waterinc.model.Users;
 import com.waterinc.repositories.UserRepository;
 import com.waterinc.view.View;
@@ -90,5 +91,13 @@ public class UserController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login.jsp";
+    }
+
+    @JsonView(View.UserView.class)
+    @RequestMapping(value = "findUserByUsername", method = RequestMethod.GET)
+    public Users finUserByUsername(){
+        String uName = SecurityUserDetailService.uName;
+//        System.out.println(uName);
+        return userRepository.findByUsername(uName);
     }
 }

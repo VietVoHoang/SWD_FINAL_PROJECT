@@ -85,6 +85,7 @@ public class OrderController {
                               String cusPhone,
                               String cusAddress,
                               int empId) {
+        System.out.println("name: " + cusName);
         Orders order = new Orders();
         order.setOrderCreateDate(createDate);
         order.setOrderTotal(total);

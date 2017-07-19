@@ -19,12 +19,15 @@ import java.util.Set;
  */
 @Service
 public class SecurityUserDetailService implements UserDetailsService {
+    public static String uName = "";
+
     @Autowired
     UserRepository userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Users user = userRepo.findByUsername(username);
+        uName = username;
         if (user != null) {
             return new SecurityUser(user.getUsername(), user.getPassword(), getAuthorities(user), user.getEnable() == 1, user);
         }
